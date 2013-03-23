@@ -155,12 +155,6 @@ public class COView implements Observer{
 		int index = update.getIndex();
 		DualColorComponent component = dualComponents.get(index);
 		component.update(update.getColor());
-		
-		for(Color col : model.chosenColors){
-			System.out.println(col);
-		}
-		
-		System.out.println("==========================");
 	}
 	
 	private class QuitActionListener implements ActionListener{
