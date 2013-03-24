@@ -1,7 +1,6 @@
 package core;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -16,6 +15,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.table.TableModel;
 
@@ -87,6 +87,7 @@ public class COView implements Observer{
 
 	protected void setUpExport() {
 		export = new JButton("Export");
+		export.addActionListener(new ExportActionListener(this.model));
 	}
 	
 	protected void setUpReset() {
@@ -147,9 +148,7 @@ public class COView implements Observer{
 		buttonsBar.add(this.quit);
 		
 		Container container = this.frame.getContentPane();
-	
-		
-		
+
 		container.add(topBar, BorderLayout.NORTH);
 		container.add(this.chosenColors, BorderLayout.WEST);
 		container.add(this.availableColors, BorderLayout.EAST);
@@ -160,6 +159,7 @@ public class COView implements Observer{
 		this.buildView();
 		this.frame.setVisible(true);
 		this.frame.pack();
+		this.frame.setLocationRelativeTo(null);
 	}
 	
 	@Override
@@ -228,7 +228,21 @@ public class COView implements Observer{
 		public void actionPerformed(ActionEvent arg0) {
 			this.model.recomputeChosenColors();
 		}		
-}
+	}
+	
+	private class ExportActionListener implements ActionListener{
+		
+		COModel model;
+		public ExportActionListener(COModel m){
+			model = m;
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			this.model.exportChosenColors();
+			JOptionPane.showMessageDialog(COView.this.frame, "Colors copied in the clipboard", "Export done", JOptionPane.OK_OPTION);
+		}		
+	}
 	
 	private class GeneratorChoseListener implements ActionListener{
 		
@@ -245,24 +259,4 @@ public class COView implements Observer{
 	        model.setColorsGenerator(generator);
 		}		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	public static void main(String[] args) {
-		List<Color> colors = new ArrayList<Color>();
-		colors.add(Color.red);
-		colors.add(Color.blue);
-		colors.add(Color.green);
-		colors.add(Color.yellow);
-		colors.add(Color.pink);
-		colors.add(Color.cyan);
-		COModel model = new COModel(new COStandardColorsGenerator(), colors);
-		COView view = new COView(model);
-		view.show();
-	}	
 }

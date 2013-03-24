@@ -9,8 +9,8 @@ public class COBlueGenerator extends COColorsGenerator {
 	@Override
 	public List<Color> generateColors() {
 		List<Color> colors = new ArrayList<Color>();
-		for(int i = 1 ; i <= 10 ; i++){
-			colors.add(new Color((float)0.02*i,(float)0.02*i,((float)0.1*i)));
+		for(int i = 1 ; i <= 20 ; i++){
+			colors.add(new Color((float)0.01*i,(float)0.01*i,((float)0.05*i)));
 		}
 		return colors;
 	}

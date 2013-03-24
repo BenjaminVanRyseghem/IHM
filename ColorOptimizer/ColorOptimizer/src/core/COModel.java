@@ -1,5 +1,8 @@
 package core;
 import java.awt.Color;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.util.List;
 import java.util.Observable;
 
@@ -78,12 +81,12 @@ public class COModel extends Observable {
 		return result;
 	}
 	
-	protected Color closestColorFrom(Color color){
+	protected Color closestColorFrom(Color gray){
 		Color result = availableColors.get(0);
-		int delta = this.distanceBetween(color, result);
+		double delta = this.distanceBetween(gray, result);
 		
 		for(Color current : availableColors){
-			int newDelta = this.distanceBetween(color, current);
+			double newDelta = this.distanceBetween(gray, current);
 			if( newDelta < delta ){
 				delta = newDelta;
 				result = current;
@@ -93,12 +96,14 @@ public class COModel extends Observable {
 		return result;
 	}
 	
-	protected int distanceBetween(Color color1, Color color2){
-		int r = Math.abs(color1.getRed() - color2.getRed()); 
-		int g = Math.abs(color1.getGreen() - color2.getGreen());
-		int b = Math.abs(color1.getBlue() - color2.getBlue());
+	protected double distanceBetween(Color gray, Color color){
+		int gr = gray.getRed();
 		
-		return r+g+b;
+		int r = color.getRed(); 
+		int g = color.getGreen();
+		int b = color.getBlue();
+		
+		return Math.abs(gr - ((r*0.3)+(g*0.59)+(b*0.11)));
 	}
 	
 	/***********************************
@@ -201,5 +206,18 @@ public class COModel extends Observable {
 		this.notifyObservers(new COGeneratorUpdate());
 		
 		this.setAvailableColors(colorsGenerator.generateColors());
+	}
+
+
+	public void exportChosenColors() {
+		Color[] colors = this.chosenColors;
+		String export = "";
+		for (int i = 0; i < colors.length; i++) {
+			Color color = colors[i];
+			export += "{" + color.getRed()+"; "+ color.getGreen() + "; "+ color.getBlue()+ "}\n";
+		}
+		StringSelection stringSelection = new StringSelection (export);
+		Clipboard clpbrd = Toolkit.getDefaultToolkit ().getSystemClipboard ();
+		clpbrd.setContents (stringSelection, null);
 	}
 }
