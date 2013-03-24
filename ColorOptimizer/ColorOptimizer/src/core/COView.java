@@ -65,7 +65,8 @@ public class COView implements Observer{
 		frame = new JFrame("Color Optimizer");
 		Container container = frame.getContentPane();
 		container.setLayout(new BorderLayout());
-		
+
+		this.frame.setPreferredSize(new Dimension(600,500));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
@@ -98,7 +99,7 @@ public class COView implements Observer{
 		COColorChooser table = new COColorChooser(tableModel);
 		
 		availableColors = new JScrollPane(table);
-		availableColors.setPreferredSize(new Dimension(350,300));
+		availableColors.setPreferredSize(new Dimension(175,300));
 	}
 	
 	protected void setUpGeneratorChooser(){

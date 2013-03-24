@@ -18,16 +18,14 @@ public class AvailableColorsModel extends AbstractTableModel {
 	}
 	
 	public int getColumnCount() {
-		return 2;
+		return 1;
 	}
 
 	public Class<?> getColumnClass(int columnIndex){
-		if(columnIndex == 0) return DraggablePanel.class;
-		return JPanel.class;
+		return DraggableDualComponent.class;
 	}
 	
 	public String getColumnName(int col){
-		if (col == 1) return "Grayscale"; 
 		return "Available Colors";
 	}
 	public int getRowCount() {
@@ -36,17 +34,11 @@ public class AvailableColorsModel extends AbstractTableModel {
 	}
 
 	@Override
-	public JPanel getValueAt(int row, int column) {
-		JPanel panel = new JPanel();
+	public DraggableDualComponent getValueAt(int row, int column) {
+		
 		Color color = this.model.getAvailableColors().get(row);
-		if (column == 1){
-			float gray = ((float)(color.getRed() * 0.30 / 255 + color.getGreen() * 0.59 / 255 + color.getBlue() * 0.11 / 255));
-			color = new Color(gray, gray, gray);
-		}
-		else{
-			panel = new DraggablePanel();
-		}
-		panel.setBackground(color);
+		DraggableDualComponent panel = new DraggableDualComponent(this.model, row, color);
+		panel.update(color);
 		return panel;
 	}
 }
