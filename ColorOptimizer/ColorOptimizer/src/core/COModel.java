@@ -11,6 +11,7 @@ import color.generator.COStandardColorsGenerator;
 import undo.redo.COUndoRedo;
 import updates.COAvailableColorsUpdate;
 import updates.COChosenColorUpdate;
+import updates.COClipBoardUpdate;
 import updates.COGeneratorUpdate;
 
 public class COModel extends Observable {
@@ -18,6 +19,7 @@ public class COModel extends Observable {
 	List<Color> originalColors;
 	List<Color> availableColors;
 	Color[] chosenColors;
+	Color colorClipBoard;
 	
 	COUndoRedo undoRedo;
 	COColorsGenerator colorsGenerator;
@@ -36,6 +38,8 @@ public class COModel extends Observable {
 		super();
 		this.setColorsGenerator(generator);
 		this.setOriginalColors(colors);
+		
+		colorClipBoard = Default_Color;
 	}
 	
 	
@@ -91,8 +95,6 @@ public class COModel extends Observable {
 	
 	
 	
-	
-	
 	/***********************************
 	 * 
 	 * PROTOCOL: accessing
@@ -100,7 +102,14 @@ public class COModel extends Observable {
 	 **********************************/
 	
 	
+	public void copy(Color color){
+		colorClipBoard = color;
+		this.notifyObservers(new COClipBoardUpdate());
+	}
 	
+	public Color paste(){
+		return colorClipBoard;
+	}
 	
 	public List<Color> getOriginalColors() {
 		return originalColors;

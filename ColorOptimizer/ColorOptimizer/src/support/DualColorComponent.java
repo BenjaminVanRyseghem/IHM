@@ -19,14 +19,13 @@ public class DualColorComponent extends JComponent {
 	COModel model;
 	JScrollPane scroller;
 	
-	DualColorComponent(COModel m, int idx, Color col, JScrollPane sc){
+	
+	DualColorComponent(COModel m, Color col){
 		model = m;
-		index = idx;
 		color = new JPanel();
 		gray = new JPanel();
-		scroller = sc;
-		
 		this.setFocusable(true);
+		
 	    this.addFocusListener(new COFocusListener(this));
 	    this.addMouseListener(new COMouseFocusListener(this));
 		
@@ -38,13 +37,29 @@ public class DualColorComponent extends JComponent {
 		this.add(color);
 		this.add(gray);
 	}
+			
+	DualColorComponent(COModel m, int idx, Color col, JScrollPane sc){
+		this(m, col);
+		
+		index = idx;
+		scroller = sc;
+	}
 	
 	protected void addPasteListener(){
-		
+		this.addKeyListener(new COPasteKeyListener(this));
+	}
+	
+	protected void paste(){
+		Color col = this.model.paste();
+		if (col == null) return;
+		this.setBackground(col);
+	}
+	
+	protected void copy(){
+		this.model.copy(this.color.getBackground());
 	}
 	
 	public void setBackground(Color col){
-		
 		model.setChosenColor(index, col);
 	}
 	

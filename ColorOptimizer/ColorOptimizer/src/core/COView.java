@@ -22,9 +22,11 @@ import javax.swing.table.TableModel;
 import support.AvailableColorsModel;
 import support.COColorChooser;
 import support.ChosenColorsModel;
+import support.ClipBoardComponent;
 import support.DualColorComponent;
 import updates.COAvailableColorsUpdate;
 import updates.COChosenColorUpdate;
+import updates.COClipBoardUpdate;
 import updates.COGeneratorUpdate;
 import updates.COUpdate;
 
@@ -40,6 +42,7 @@ public class COView implements Observer{
 	JButton reset;
 	JButton export;
 	JButton quit;
+	ClipBoardComponent clipboard;
 	
 	List<DualColorComponent> dualComponents;
 	
@@ -52,6 +55,7 @@ public class COView implements Observer{
 	}
 	
 	protected void instantiateWidgets(){
+		this.setUpClipBoard();
 		this.setUpFrame();
 		this.setUpChosenColors();
 		this.setUpAvailableColors();
@@ -59,6 +63,10 @@ public class COView implements Observer{
 		this.setUpReset();
 		this.setUpExport();
 		this.setUpQuit();
+	}
+	
+	protected void setUpClipBoard(){
+		clipboard = new ClipBoardComponent(this.model);
 	}
 
 	protected void setUpFrame() {
@@ -120,6 +128,7 @@ public class COView implements Observer{
 	
 		buttonsBar.setLayout(new BoxLayout(buttonsBar, BoxLayout.LINE_AXIS));
 		buttonsBar.add(this.reset);
+		buttonsBar.add(this.clipboard);
 		buttonsBar.add(Box.createHorizontalGlue());
 		buttonsBar.add(this.export);
 		buttonsBar.add(this.quit);
@@ -158,6 +167,20 @@ public class COView implements Observer{
 		DualColorComponent component = dualComponents.get(index);
 		component.update(update.getColor());
 	}
+	
+
+	public void update(COClipBoardUpdate update) {
+		clipboard.update();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	private class QuitActionListener implements ActionListener{
 		@Override
@@ -213,6 +236,5 @@ public class COView implements Observer{
 		COModel model = new COModel(new COStandardColorsGenerator(), colors);
 		COView view = new COView(model);
 		view.show();
-	}
-	
+	}	
 }

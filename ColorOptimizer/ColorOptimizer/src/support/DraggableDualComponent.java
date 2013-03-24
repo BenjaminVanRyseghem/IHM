@@ -6,8 +6,6 @@ import java.awt.dnd.DnDConstants;
 import java.awt.dnd.DragGestureEvent;
 import java.awt.dnd.DragGestureListener;
 import java.awt.dnd.DragSource;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 import javax.swing.JScrollPane;
 
@@ -23,21 +21,7 @@ public class DraggableDualComponent extends DualColorComponent implements DragGe
 		DragSource ds = new DragSource();
 	    ds.createDefaultDragGestureRecognizer(this, DnDConstants.ACTION_COPY, this);
 	    	    
-	    this.addKeyListener(new KeyListener(){
-
-			@Override
-			public void keyPressed(KeyEvent arg0) {
-			}
-
-			@Override
-			public void keyReleased(KeyEvent arg0) {
-			}
-
-			@Override
-			public void keyTyped(KeyEvent arg0) {
-					System.out.println(arg0.getModifiers());
-			}
-	    });
+	    this.addKeyListener(new COCopyKeyListener(this));
 	}
 	
 	@Override
