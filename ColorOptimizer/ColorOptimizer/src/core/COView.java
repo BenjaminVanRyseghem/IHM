@@ -85,20 +85,22 @@ public class COView implements Observer{
 	}
 	
 	protected void setUpChosenColors(){
-		
 		dualComponents.clear();
-		TableModel tableModel = new ChosenColorsModel(model, dualComponents);
+
+		chosenColors = new JScrollPane();
+		TableModel tableModel = new ChosenColorsModel(model, dualComponents, chosenColors);
 		COColorChooser table = new COColorChooser(tableModel);
 		
-		chosenColors = new JScrollPane(table);
+		chosenColors.setViewportView(table);
 		chosenColors.setPreferredSize(new Dimension(350,300));
 	}
 	
 	protected void setUpAvailableColors(){
-		TableModel tableModel = new AvailableColorsModel(model);
+		availableColors = new JScrollPane();
+		TableModel tableModel = new AvailableColorsModel(model, availableColors);
 		COColorChooser table = new COColorChooser(tableModel);
 		
-		availableColors = new JScrollPane(table);
+		availableColors.setViewportView(table);
 		availableColors.setPreferredSize(new Dimension(175,300));
 	}
 	
@@ -142,7 +144,6 @@ public class COView implements Observer{
 	}
 	
 	public void update(COGeneratorUpdate update){
-		System.out.println("COGeneratorUpdate");
 	}
 	
 	public void update(COAvailableColorsUpdate update){

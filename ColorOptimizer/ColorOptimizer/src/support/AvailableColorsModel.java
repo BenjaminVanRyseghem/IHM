@@ -2,7 +2,7 @@ package support;
 
 import java.awt.Color;
 
-import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.table.AbstractTableModel;
 
 import core.COModel;
@@ -12,9 +12,11 @@ public class AvailableColorsModel extends AbstractTableModel {
 	private static final long serialVersionUID = -1457342170991596203L;
 
 	COModel model;
+	JScrollPane scroller;
 	
-	public AvailableColorsModel(COModel model){
+	public AvailableColorsModel(COModel model, JScrollPane sc){
 		this.model = model;
+		scroller = sc;
 	}
 	
 	public int getColumnCount() {
@@ -37,7 +39,7 @@ public class AvailableColorsModel extends AbstractTableModel {
 	public DraggableDualComponent getValueAt(int row, int column) {
 		
 		Color color = this.model.getAvailableColors().get(row);
-		DraggableDualComponent panel = new DraggableDualComponent(this.model, row, color);
+		DraggableDualComponent panel = new DraggableDualComponent(this.model, row, color, scroller);
 		panel.update(color);
 		return panel;
 	}

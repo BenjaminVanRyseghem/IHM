@@ -1,9 +1,11 @@
 package support;
 
 import java.awt.Color;
+
 import javax.swing.BoxLayout;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 import core.COModel;
 
@@ -15,18 +17,30 @@ public class DualColorComponent extends JComponent {
 	JPanel gray;
 	int index;
 	COModel model;
+	JScrollPane scroller;
 	
-	DualColorComponent(COModel m, int idx, Color col){
+	DualColorComponent(COModel m, int idx, Color col, JScrollPane sc){
 		model = m;
 		index = idx;
 		color = new JPanel();
 		gray = new JPanel();
+		scroller = sc;
 		
+		this.setFocusable(true);
+	    this.addFocusListener(new COFocusListener(this));
+	    this.addMouseListener(new COMouseFocusListener(this));
+		
+	    this.addPasteListener();
+	    
 		this.update(col);
 		
 		this.setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
 		this.add(color);
 		this.add(gray);
+	}
+	
+	protected void addPasteListener(){
+		
 	}
 	
 	public void setBackground(Color col){
@@ -38,6 +52,10 @@ public class DualColorComponent extends JComponent {
 		float grayScale = ((float)(col.getRed() * 0.30 / 255 + col.getGreen() * 0.59 / 255 + col.getBlue() * 0.11 / 255));	
 		color.setBackground(col);
 		gray.setBackground(new Color(grayScale, grayScale, grayScale));
+	}
+
+	public JScrollPane getScroller() {
+		return scroller;
 	}
 	
 }

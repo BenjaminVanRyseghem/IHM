@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.table.AbstractTableModel;
 
 import core.COModel;
@@ -15,10 +16,12 @@ public class ChosenColorsModel extends AbstractTableModel {
 
 	COModel model;
 	List<DualColorComponent> dualComponents;
+	JScrollPane scroller;
 	
-	public ChosenColorsModel(COModel model, List<DualColorComponent> dualComponents){
+	public ChosenColorsModel(COModel model, List<DualColorComponent> dualComponents, JScrollPane sc){
 		this.model = model;
 		this.dualComponents = dualComponents;
+		scroller = sc;
 	}
 	
 	public int getColumnCount() {
@@ -52,7 +55,7 @@ public class ChosenColorsModel extends AbstractTableModel {
 		
 		if (column == 1){
 			color = this.model.getChosenColors()[row];
-			DualColorComponent newComponent = new DualColorComponent(this.model, row, color);
+			DualColorComponent newComponent = new DualColorComponent(this.model, row, color, scroller);
 			dualComponents.add(row, newComponent);
 			panel = newComponent;
 			new DropTargetListener(panel);
