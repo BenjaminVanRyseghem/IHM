@@ -26,8 +26,7 @@ public class DualColorComponent extends JComponent {
 		gray = new JPanel();
 		this.setFocusable(true);
 		
-	    this.addFocusListener(new COFocusListener(this));
-	    this.addMouseListener(new COMouseFocusListener(this));
+	    this.addFocusHandling();
 		
 	    this.addPasteListener();
 	    
@@ -36,6 +35,11 @@ public class DualColorComponent extends JComponent {
 		this.setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
 		this.add(color);
 		this.add(gray);
+	}
+
+	protected void addFocusHandling() {
+		this.addFocusListener(new COFocusListener(this));
+	    this.addMouseListener(new COMouseFocusListener(this));
 	}
 			
 	DualColorComponent(COModel m, int idx, Color col, JScrollPane sc){

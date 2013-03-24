@@ -40,6 +40,7 @@ public class COView implements Observer{
 	JScrollPane availableColors;	
 	JComboBox generatorChooser;
 	JButton reset;
+	JButton compute;
 	JButton export;
 	JButton quit;
 	ClipBoardComponent clipboard;
@@ -61,6 +62,7 @@ public class COView implements Observer{
 		this.setUpAvailableColors();
 		this.setUpGeneratorChooser();
 		this.setUpReset();
+		this.setUpCompute();
 		this.setUpExport();
 		this.setUpQuit();
 	}
@@ -90,6 +92,11 @@ public class COView implements Observer{
 	protected void setUpReset() {
 		reset = new JButton("Reset");
 		reset.addActionListener(new ResetActionListener(this.model));
+	}
+	
+	protected void setUpCompute() {
+		compute = new JButton("Compute");
+		compute.addActionListener(new ComputeActionListener(this.model));
 	}
 	
 	protected void setUpChosenColors(){
@@ -124,18 +131,26 @@ public class COView implements Observer{
 	}
 		
 	protected void buildView(){
+		Container topBar = new Container();
+		
+		topBar.setLayout(new BoxLayout(topBar, BoxLayout.LINE_AXIS));
+		topBar.add(this.generatorChooser);
+		topBar.add(this.clipboard);
+		
 		Container buttonsBar = new Container();
 	
 		buttonsBar.setLayout(new BoxLayout(buttonsBar, BoxLayout.LINE_AXIS));
+		buttonsBar.add(this.compute);
 		buttonsBar.add(this.reset);
-		buttonsBar.add(this.clipboard);
 		buttonsBar.add(Box.createHorizontalGlue());
 		buttonsBar.add(this.export);
 		buttonsBar.add(this.quit);
 		
 		Container container = this.frame.getContentPane();
 	
-		container.add(this.generatorChooser, BorderLayout.NORTH);
+		
+		
+		container.add(topBar, BorderLayout.NORTH);
 		container.add(this.chosenColors, BorderLayout.WEST);
 		container.add(this.availableColors, BorderLayout.EAST);
 		container.add(buttonsBar, BorderLayout.SOUTH);
@@ -201,6 +216,19 @@ public class COView implements Observer{
 			this.model.resetChosenColors();
 		}		
 	}
+
+	private class ComputeActionListener implements ActionListener{
+	
+		COModel model;
+		public ComputeActionListener(COModel m){
+			model = m;
+		}
+		
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			this.model.recomputeChosenColors();
+		}		
+}
 	
 	private class GeneratorChoseListener implements ActionListener{
 		

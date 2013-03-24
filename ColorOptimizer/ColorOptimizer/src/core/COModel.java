@@ -65,6 +65,42 @@ public class COModel extends Observable {
 		return generators;
 	}
 	
+	protected Color[] computeChosenColors(){
+		int size = originalColors.size();
+		Color[] result = new Color[size];
+		int index = 0;
+		
+		for (Color color : originalColors){
+			result[index] = this.closestColorFrom(color);
+			index++;
+		}
+		
+		return result;
+	}
+	
+	protected Color closestColorFrom(Color color){
+		Color result = availableColors.get(0);
+		int delta = this.distanceBetween(color, result);
+		
+		for(Color current : availableColors){
+			int newDelta = this.distanceBetween(color, current);
+			if( newDelta < delta ){
+				delta = newDelta;
+				result = current;
+			}
+		}
+		
+		return result;
+	}
+	
+	protected int distanceBetween(Color color1, Color color2){
+		int r = Math.abs(color1.getRed() - color2.getRed()); 
+		int g = Math.abs(color1.getGreen() - color2.getGreen());
+		int b = Math.abs(color1.getBlue() - color2.getBlue());
+		
+		return r+g+b;
+	}
+	
 	/***********************************
 	 * 
 	 * PROTOCOL: updating
@@ -92,7 +128,13 @@ public class COModel extends Observable {
 		this.notifyObservers(new COChosenColorUpdate(index, color));
 	}
 	
-	
+	public void recomputeChosenColors() {
+		Color[] colors = this.computeChosenColors();
+		for (int i = 0; i < colors.length; i++) {
+			Color color = colors[i];
+			this.setChosenColor(i, color);
+		}
+	}	
 	
 	
 	/***********************************
@@ -118,13 +160,7 @@ public class COModel extends Observable {
 	public void setOriginalColors(List<Color> originalColors) {
 		this.originalColors = originalColors;
 
-		int size = originalColors.size();
-		Color[] colors = new Color[size];
-		
-		for(int i = 0 ; i < size ; i++){
-			colors[i] = Default_Color;
-		}
-		this.setChosenColors(colors);
+		this.setChosenColors(this.computeChosenColors());
 	}
 
 	public Color[] getChosenColors() {
