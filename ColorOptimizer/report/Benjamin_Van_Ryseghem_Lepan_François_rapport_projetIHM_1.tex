@@ -1,15 +1,15 @@
  \documentclass[a4paper,10pt]{article}
-\input{/Users/WannaGetHigh/workspace/latex/macros.tex}
+\input{macro.tex}
 
-\title{Rapport IHM Projet 1: Interface d’optimisation du choix de couleurs}
-\author{François \bsc{Lepan} Benjamin \bsc{Van Ryseghem}}
+\title{Interface d’optimisation du choix de couleurs\\Interface Homme Machine - Master 1}
+\author{François \bsc{Lepan}\\Benjamin \bsc{Van Ryseghem}}
 
 \begin{document}
 \maketitle
 
 \section*{Introduction}
 
-Ce rapport fait état de l'utilisation ainsi que de la description de l'interface. Nous verrons comment l'utiliser, quels procédés ont été mis en oeuvre ainsi qu'un UML résumant les classes principales ainsi que leur fonctionnalités.
+Ce rapport fait état de l'utilisation ainsi que de la description de l'interface. Nous verrons comment l'utiliser, quels procédés ont été mis en oeuvre ainsi qu'un UML résumant les classes principales ainsi que leurs fonctionnalités.
 
 \section{L'interface}
 
@@ -21,46 +21,47 @@ Ce rapport fait état de l'utilisation ainsi que de la description de l'interface
 	\label{fig:interface}
 \end{figure}
 
-L'interface (\emph{cf.}~Fig.~\ref{fig:interface})choisie est très basique il y a un curseur et une liste en haut, trois colonnes au centre et quatre bouton en bas.
+L'interface (\emph{cf.} Fig.~\ref{fig:interface}) choisie est très basique: il y a un curseur, une liste et le presse-papier de couleurs en haut, trois colonnes au centre et quatre boutons  en bas.
 
-Le curseur en haut permet de choisir le nombre de nuance de gris que l'application doit générer et la liste permet de choisir le type de couleur à générer.
+Le curseur en haut permet de choisir le nombre de nuances de gris que l'application doit générer et la liste permet de choisir le type de couleurs à générer.
 
-Au centre les deux colonnes à gauche représente les couleurs que l'utilisateur va choisir. La colonne de gauche contient les nuances de gris générées par l'application et la colonne au centre contient le choix de l'utilisateur.
+Au centre les deux colonnes à gauche représentent les couleurs que l'utilisateur va choisir. La colonne de gauche contient les nuances de gris générées par l'application et la colonne au centre contient le choix de l'utilisateur.
 
-Pour choisir de nouvelles couleurs l'utilisateur n'aura qu'a prendre les couleurs du pool de couleur proposé. Ce pool se situe dans la colonne à droite de l'interface.
+Pour choisir de nouvelles couleurs l'utilisateur n'aura qu'à prendre les couleurs depuis le panaché de couleurs proposées. Ce panaché est symbolisé par une liste qui se situe dans la colonne à droite de l'interface.
 
-En bas se trouve les différents boutons. Les deux bouton à gauche servent à modifié la colonne du centre. 
+En bas se trouve les différents boutons. Les deux boutons de gauche servent à modifier la colonne du centre. 
 Le bouton \emph{Compute} permet de calculer des couleurs ayant une nuance assez marquée. 
-Le bouton \emph{reset} permet de vider cette colonne.
+Le bouton \emph{Reset} permet de vider cette colonne.
 
-Ensuite le bouton \emph{Export} copie dans le presse-papier les valeurs des couleurs pour la colonne du centre.
+Ensuite le bouton \emph{Export} copie dans le presse-papier les valeurs des couleurs choisies par l'utilisateur.
 
 Et enfin le bouton \emph{Quit} permet de quitter l'application.
 
 \section{L'utilisation}
 
-L'interface est très simple d'utilisation. L'utilisateur choisie le nombre de couleur dont il a besoin via le curseur, un pool de couleur est créé (colonne centrale).
+L'interface est très simple d'utilisation. L'utilisateur choisit le nombre de couleurs dont il a besoin via le curseur, créant ainsi un panaché de nuances de gris équitablement réparties, ainsi qu'un choix prédéfini pour chacune de ces couleurs, en fonction du générateur de couleurs choisi.
 
-Si le choix calculé par l'application ne lui plait pas il peut à tout moment choisir de nouvelles couleurs via de simple cliqué glissé ou copier/coller parmi le pool de choix (colonne de droite).
+Si le choix calculé par l'application ne lui plait pas, il peut à tout moment choisir de nouvelles couleurs via de simple glisser/déposer ou copier/coller parmi le panaché de choix\footnote{colonne de droite}.
 
-Il peut grâce aux bouton \emph{Compute} et \emph{reset} recalculer ou remettre à zéro le choix des couleurs. Si il a fini exporter les couleurs dans le presse-papier grâce au bouton \emph{export}.
+Il peut grâce aux boutons \emph{Compute} et \emph{Reset} recalculer ou remettre à zéro le choix des couleurs. Quand l'utilisateur est satisfait, il peut exporter son choix dans le presse-papier grâce au bouton \emph{Export}.
 
-Et enfin si il veut quitter l'application il n'a qu'a cliquer sur le bouton \emph{quit}.
-
+L'utilisateur peut ensuite quitter l'application, soit en utilisant l'icône de la fenêtre, soit en pressant le bouton \emph{Quit}.
 
 \section{Les procédés utilisés}
 
-Nous avons mis en place un cliqué glissé, un copier/coller ainsi que la création d'un composant \emph{DualColorComponent}. 
+Nous avons mis en place un glisser/déposer, un copier/coller ainsi que la création de composants \emph{DualColorComponent} et sa sous classe \emph{DraggableDualComponent}. 
 
-Le cliqué glissé nous paraissais essentiel pour que cette interface soit la plus facile à utiliser, plus intuitif. En effet l'utilisateur pourra prendre des couleurs parmi le pool de couleur pour les mettre dans la colonne de choix par un simple cliqué glissé.
+Le glisser/déposer nous paraissais essentiel pour que cette interface soit la plus facile à utiliser, plus intuitive. En effet l'utilisateur pourra prendre des couleurs parmi le panaché de couleurs pour les mettre dans la colonne de choix par un simple glisser/déposer.
 
-Le copier coller est un plus pour les utilisateur qui préfère utiliser leur clavier.
+Le copier/coller est un plus pour les utilisateurs qui préfèrent utiliser leur clavier. Un raccourci clavier permet également de coller rapidement plusieurs fois la même couleur.
 
-Nous avons aussi créer un composant nommé \emph{DualColorComponent}. C'est ce composant qui alimente la colonne centrale ainsi que la colonne de droite. Cette Classe est constitué de deux JPanel l'un contenant la couleur et l'autre son niveau de gris. Cette élément est très intéressant car il permet a l'utilisateur de toujours avoir une vue direct sur la couleur et son niveau de gris sans effort. Cela lui permettra de faire des choix plus rapide et précis.
+Nous avons aussi créer un composant nommé \emph{DualColorComponent}. C'est ce composant qui alimente la colonne centrale ainsi que la colonne de droite. Cette classe est constituée de deux JPanel: l'un contenant la couleur, et l'autre son niveau de gris. Cette élément est très intéressant car il permet à l'utilisateur de toujours avoir une vue direct de la couleur et de son niveau de gris sans effort. Cela lui permettra de faire des choix plus rapide et précis, en connaissant de facto l'impact de son choix sur la représentation en niveau de gris.
+
+Sa sous classe \emph{DraggableDualComponent} permet de plus de pouvoir glisser la couleur vers un autre \emph{DualColorComponent} (dans la liste de choix, ou le presse-papier de couleur).
 
 \section*{Conclusion}
 
-Cette interface répond bien au problème posé qui est d'aider l'utilisateur dans son choix de couleur pour le passage en niveau de gris. L'interface permet de le faire sans effort (ou presque) et en un temps minimum grâce aux procédé mis en place.
+Cette interface répond bien au problème posé qui est d'aider l'utilisateur dans son choix de couleurs pour le passage en niveau de gris. L'interface permet de le faire sans effort (ou presque) et en un temps minimum grâce aux procédés mis en place.
 
 \section{Appendices}
 
