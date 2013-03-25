@@ -102,7 +102,6 @@ public class COView implements Observer{
 		Container container = frame.getContentPane();
 		container.setLayout(new BorderLayout());
 
-		this.frame.setPreferredSize(new Dimension(600,500));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
@@ -197,10 +196,13 @@ public class COView implements Observer{
 	
 	public void show(){
 		this.buildView();
-		this.frame.setVisible(true);
+		
 		this.frame.pack();
 		this.frame.setLocationRelativeTo(null);
 		this.frame.setMinimumSize(new Dimension(530,400));
+		this.frame.setMaximumSize(new Dimension(530,1000));
+		this.frame.setVisible(true);
+		
 	}
 	
 	@Override
@@ -328,7 +330,7 @@ public class COView implements Observer{
 
 			this.view.model.setOriginalColors(colors);
 			
-			TableModel tableModel = new ChosenColorsModel(model, dualComponents, chosenColors);
+			TableModel tableModel = new ChosenColorsModel(this.view.model, dualComponents, chosenColors);
 			COColorChooser table = new COColorChooser(tableModel);
 			
 			chosenColors.setViewportView(table);
