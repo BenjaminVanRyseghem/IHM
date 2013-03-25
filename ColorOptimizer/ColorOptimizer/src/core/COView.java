@@ -4,13 +4,9 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
@@ -90,7 +86,6 @@ public class COView implements Observer{
 		
 		NumberOfColorChooser listener = new NumberOfColorChooser(this);
 		this.slider.addChangeListener(listener);
-		this.slider.addMouseListener(listener);
 		
 		this.label = new JLabel("Number of wanted colors");
 		this.numbers = new JLabel(String.valueOf(this.slider.getValue()));
@@ -166,38 +161,13 @@ public class COView implements Observer{
 		Container topBar = new Container();
 		topBar.setLayout(new GridBagLayout());
 		
-		//topBar.setLayout(new BoxLayout(topBar, BoxLayout.LINE_AXIS));
-		
-		
-		GridBagConstraints constraint = new GridBagConstraints(1, 1, 1, 1, 0, 0, 
-				GridBagConstraints.CENTER, 
-				0, new Insets(0,0,0,0), 0, 0);
-		
-		topBar.add(this.label,constraint);
-		
-		constraint = new GridBagConstraints(2, 1, 1, 1, 0, 0, 
-				GridBagConstraints.CENTER, 
-				0, new Insets(0,0,0,0), 0, 0);
-		
-		topBar.add(this.slider,constraint);
-		
-		constraint = new GridBagConstraints(3, 1, 1, 1, 0, 0, 
-				GridBagConstraints.CENTER, 
-				0, new Insets(0,0,0,0), 0, 0);
-		
-		topBar.add(this.numbers,constraint);
-		
-		constraint = new GridBagConstraints(4, 1, 1, 1, 0, 0, 
-				GridBagConstraints.CENTER, 
-				0, new Insets(0,0,0,0), 0, 0);
-		
-		topBar.add(this.generatorChooser,constraint);
-		
-		constraint = new GridBagConstraints(5, 1, 1, 1, 0, 0, 
-				GridBagConstraints.CENTER, 
-				0, new Insets(0,0,0,0), 0, 0);
-		
-		topBar.add(this.clipboard,constraint);
+		topBar.setLayout(new BoxLayout(topBar, BoxLayout.LINE_AXIS));
+		topBar.add(this.label);
+		topBar.add(this.slider);
+		topBar.add(this.numbers);
+		topBar.add(Box.createHorizontalGlue());
+		topBar.add(this.generatorChooser);
+		topBar.add(this.clipboard);
 		
 		
 		return topBar;
@@ -333,7 +303,7 @@ public class COView implements Observer{
 	
 	
 	
-	private class NumberOfColorChooser implements MouseListener, ChangeListener {
+	private class NumberOfColorChooser implements ChangeListener {
 
 		COView view;
 		
@@ -344,10 +314,6 @@ public class COView implements Observer{
 		@Override
 		public void stateChanged(ChangeEvent arg0) {
 			this.view.numbers.setText(slider.getValue() + "");
-		}
-
-		@Override
-		public void mouseReleased(MouseEvent e) {
 			int number = slider.getValue();
 			List<Color> colors = new ArrayList<Color>();
 			int delta = 255 / (number+1);
@@ -359,27 +325,13 @@ public class COView implements Observer{
 				gray += delta;
 				i++;
 			}
-			
-			//this.view.model = new COModel(new COStandardColorsGenerator(), colors);
+
 			this.view.model.setOriginalColors(colors);
 			
 			TableModel tableModel = new ChosenColorsModel(model, dualComponents, chosenColors);
 			COColorChooser table = new COColorChooser(tableModel);
 			
 			chosenColors.setViewportView(table);
-			
 		}
-		
-		@Override
-		public void mouseClicked(MouseEvent e) {}
-
-		@Override
-		public void mouseEntered(MouseEvent e) {}
-
-		@Override
-		public void mouseExited(MouseEvent e) {}
-
-		@Override
-		public void mousePressed(MouseEvent e) {}
 	}
 }
