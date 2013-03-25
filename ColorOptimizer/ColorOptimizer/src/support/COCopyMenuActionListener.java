@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
  * I copy the chosen element.
  *  
  * @author Benjamin Van Ryseghem, Francois Lepan
- *
  */
 public class COCopyMenuActionListener implements ActionListener {
 	
