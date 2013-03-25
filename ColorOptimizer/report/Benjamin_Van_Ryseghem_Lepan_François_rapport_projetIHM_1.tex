@@ -47,6 +47,12 @@ Il peut grâce aux boutons \emph{Compute} et \emph{Reset} recalculer ou remettre 
 
 L'utilisateur peut ensuite quitter l'application, soit en utilisant l'icône de la fenêtre, soit en pressant le bouton \emph{Quit}.
 
+\section{Calcul du plus proche niveau de gris}
+L'algorithme de calcul du niveau de gris le plus proche est assez simple: pour l'ensemble des couleurs générées, nous calculons le niveau de gris, et sélectionnons la couleur étant la plus proche du niveau de gris souhaité:
+\[
+	\delta = |\ \text{niveau\_de\_gris} - (0.3\times\text{couleur.rouge} + 0.59\times\text{couleur.vert} + 0.11\times\text{couleur.bleu})\ |
+\]
+
 \section{Les procédés utilisés}
 
 Nous avons mis en place un glisser/déposer, un copier/coller ainsi que la création de composants \emph{DualColorComponent} et sa sous classe \emph{DraggableDualComponent}. 
@@ -63,7 +69,7 @@ Sa sous classe \emph{DraggableDualComponent} permet de plus de pouvoir glisser l
 
 Cette interface répond bien au problème posé qui est d'aider l'utilisateur dans son choix de couleurs pour le passage en niveau de gris. L'interface permet de le faire sans effort (ou presque) et en un temps minimum grâce aux procédés mis en place.
 
-\section{Appendices}
+%\section{Appendices}
 
 
 

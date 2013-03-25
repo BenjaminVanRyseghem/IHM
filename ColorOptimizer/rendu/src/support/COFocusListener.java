@@ -17,7 +17,7 @@ public class COFocusListener implements FocusListener {
 	@Override
 	public void focusGained(FocusEvent arg0) {
 		this.model.setBorder(new LineBorder(Color.blue, 2) );
-		((COColorChooser)(this.model.getParent())).scrollRectToVisible(this.model.getBounds());
+		this.model.scrollRectToVisible(this.model.getBounds());
 	}
 
 	@Override
