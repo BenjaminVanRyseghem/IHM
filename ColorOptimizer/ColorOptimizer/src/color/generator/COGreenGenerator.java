@@ -5,6 +5,12 @@ import java.util.List;
 
 import java.util.ArrayList;
 
+/**
+ * I am a class that generate green colors from dark to light
+ * 
+ * @author Benjamin Van Ryseghem, Francois Lepan
+ *
+ */
 public class COGreenGenerator extends COColorsGenerator {
 
 	@Override

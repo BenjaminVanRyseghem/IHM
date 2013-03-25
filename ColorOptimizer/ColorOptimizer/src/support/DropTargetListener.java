@@ -9,19 +9,44 @@ import java.awt.dnd.DropTargetDropEvent;
 
 import javax.swing.JComponent;
 
-public class DropTargetListener extends DropTargetAdapter {
-	private DropTarget dropTarget;
-	private JComponent panel;
 
+/**
+ * I am a listener that drop the dragged element onto the dropTarget.
+ * 
+ * @author Benjamin Van Ryseghem, Francois Lepan
+ *
+ */
+public class DropTargetListener extends DropTargetAdapter {
+	/**
+	 * The drop wrapper.
+	 *  
+	 * @uml.property  name="dropTarget"
+	 */
+	private DropTarget dropTarget;
+	
+	
+	/**
+	 * The panel on which the color will change 
+	 * 
+	 * @uml.property  name="panel"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
+	private JComponent panel;
+	
+	
+	/**
+	 * The basic constructor.
+	 * 
+	 * Set the panel and the drop target.
+	 * 
+	 * @param panel
+	 */
 	public DropTargetListener(JComponent panel) {
 		this.panel = panel;
 		dropTarget = new DropTarget(panel, DnDConstants.ACTION_COPY, this, true, null);
 	}
 
-	public DropTarget dummyMethod(){
-		return dropTarget;
-	}
-	
+	@Override
 	public void drop(DropTargetDropEvent event) {
 		try {
 			Transferable tr = event.getTransferable();

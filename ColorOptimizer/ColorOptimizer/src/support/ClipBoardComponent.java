@@ -7,6 +7,11 @@ import javax.swing.border.LineBorder;
 
 import core.COModel;
 
+/**
+ * I am a class that is used for the copy paste action in the interface.
+ * 
+ * @author Benjamin Van Ryseghem, Francois Lepan
+ */
 public class ClipBoardComponent extends DualColorComponent {
 
 	private static final long serialVersionUID = 5237526207016737544L;

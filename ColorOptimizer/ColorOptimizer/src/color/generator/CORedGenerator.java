@@ -4,6 +4,13 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * I am a class that generate red colors from dark to light
+ * 
+ * @author Benjamin Van Ryseghem, Francois Lepan
+ *
+ */
 public class CORedGenerator extends COColorsGenerator {
 
 	@Override

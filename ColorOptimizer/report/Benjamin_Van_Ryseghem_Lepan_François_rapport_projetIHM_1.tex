@@ -21,7 +21,7 @@ Ce rapport fait état de l'utilisation ainsi que de la description de l'interface
 	\label{fig:interface}
 \end{figure}
 
-L'interface (\emph{cf.}~Fig.~\ref{fig:interface})choisie est très basique il y a un curseur et une liste en haut, trois colonnes au centre et quatre bouton en bas.
+L'interface (\emph{cf.}~Fig.~\ref{fig:interface})choisie est très basique il y a un curseur et une liste en haut, trois colonnes au centre et quatre boutons en bas.
 
 Le curseur en haut permet de choisir le nombre de nuance de gris que l'application doit générer et la liste permet de choisir le type de couleur à générer.
 
@@ -29,7 +29,7 @@ Au centre les deux colonnes à gauche représente les couleurs que l'utilisateur v
 
 Pour choisir de nouvelles couleurs l'utilisateur n'aura qu'a prendre les couleurs du pool de couleur proposé. Ce pool se situe dans la colonne à droite de l'interface.
 
-En bas se trouve les différents boutons. Les deux bouton à gauche servent à modifié la colonne du centre. 
+En bas se trouve les différents boutons. Les deux boutons à gauche servent à modifier la colonne du centre. 
 Le bouton \emph{Compute} permet de calculer des couleurs ayant une nuance assez marquée. 
 Le bouton \emph{reset} permet de vider cette colonne.
 
@@ -62,9 +62,42 @@ Nous avons aussi créer un composant nommé \emph{DualColorComponent}. C'est ce co
 
 Cette interface répond bien au problème posé qui est d'aider l'utilisateur dans son choix de couleur pour le passage en niveau de gris. L'interface permet de le faire sans effort (ou presque) et en un temps minimum grâce aux procédé mis en place.
 
-\section{Appendices}
+\section{Annexe}
+
+\begin{figure}[ht]
+\begin{center}
+	\includegraphics[width=7cm]{images/core.png}
+\end{center}
+	\caption{UML du package core : le modèle et la vue}
+	\label{fig:core}
+\end{figure}
 
 
+\begin{figure}[ht]
+\begin{center}
+	\includegraphics[width=10cm]{images/color_generator.png}
+\end{center}
+	\caption{UML du package color.generator : les classes qui s'occupent de générer les nuances de gris avec leurs couleurs respective}
+	\label{fig:generator}
+\end{figure}
+
+
+\begin{figure}[ht]
+\begin{center}
+	\includegraphics[width=10cm]{images/support.png}
+\end{center}
+	\caption{UML du package support : les classes qui permettent le cliquer/glisser et copier/coller des couleurs ainsi que la classe DualColorComponent (toutes les classes ne sont pas présentes justes les essentiels)}
+	\label{fig:}
+\end{figure}
+
+
+\begin{figure}[ht]
+\begin{center}
+	\includegraphics[width=10cm]{images/update.png}
+\end{center}
+	\caption{UML du package update : classes permettant la mise à jour des composants}
+	\label{fig:core}
+\end{figure}
 
 
 \end{document}
