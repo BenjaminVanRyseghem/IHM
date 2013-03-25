@@ -1,10 +1,16 @@
 package core;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
@@ -15,8 +21,12 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
+import javax.swing.JSlider;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.table.TableModel;
 
 import support.AvailableColorsModel;
@@ -45,6 +55,11 @@ public class COView implements Observer{
 	JButton quit;
 	ClipBoardComponent clipboard;
 	
+	
+	JLabel label;
+	JSlider slider;
+	JLabel numbers;
+	
 	List<DualColorComponent> dualComponents;
 	
 	public COView(COModel model){
@@ -65,7 +80,23 @@ public class COView implements Observer{
 		this.setUpCompute();
 		this.setUpExport();
 		this.setUpQuit();
+		this.setUpNumberColorChooser();
 	}
+	
+	protected void setUpNumberColorChooser() {
+		this.slider = new JSlider(1, 10);
+		this.slider.setPreferredSize(new Dimension(176,29));
+		this.slider.setValue(this.model.getChosenColors().length);
+		
+		NumberOfColorChooser listener = new NumberOfColorChooser(this);
+		this.slider.addChangeListener(listener);
+		this.slider.addMouseListener(listener);
+		
+		this.label = new JLabel("Number of wanted colors");
+		this.numbers = new JLabel(String.valueOf(this.slider.getValue()));
+	}
+	
+	
 	
 	protected void setUpClipBoard(){
 		clipboard = new ClipBoardComponent(this.model);
@@ -131,12 +162,51 @@ public class COView implements Observer{
 		return this.model.availableGenerators(); 
 	}
 		
-	protected void buildView(){
+	private Container buildTopBar() {
 		Container topBar = new Container();
+		topBar.setLayout(new GridBagLayout());
 		
-		topBar.setLayout(new BoxLayout(topBar, BoxLayout.LINE_AXIS));
-		topBar.add(this.generatorChooser);
-		topBar.add(this.clipboard);
+		//topBar.setLayout(new BoxLayout(topBar, BoxLayout.LINE_AXIS));
+		
+		
+		GridBagConstraints constraint = new GridBagConstraints(1, 1, 1, 1, 0, 0, 
+				GridBagConstraints.CENTER, 
+				0, new Insets(0,0,0,0), 0, 0);
+		
+		topBar.add(this.label,constraint);
+		
+		constraint = new GridBagConstraints(2, 1, 1, 1, 0, 0, 
+				GridBagConstraints.CENTER, 
+				0, new Insets(0,0,0,0), 0, 0);
+		
+		topBar.add(this.slider,constraint);
+		
+		constraint = new GridBagConstraints(3, 1, 1, 1, 0, 0, 
+				GridBagConstraints.CENTER, 
+				0, new Insets(0,0,0,0), 0, 0);
+		
+		topBar.add(this.numbers,constraint);
+		
+		constraint = new GridBagConstraints(4, 1, 1, 1, 0, 0, 
+				GridBagConstraints.CENTER, 
+				0, new Insets(0,0,0,0), 0, 0);
+		
+		topBar.add(this.generatorChooser,constraint);
+		
+		constraint = new GridBagConstraints(5, 1, 1, 1, 0, 0, 
+				GridBagConstraints.CENTER, 
+				0, new Insets(0,0,0,0), 0, 0);
+		
+		topBar.add(this.clipboard,constraint);
+		
+		
+		return topBar;
+	}
+	
+	
+	protected void buildView(){
+		
+		Container topBar = this.buildTopBar();
 		
 		Container buttonsBar = new Container();
 	
@@ -160,6 +230,7 @@ public class COView implements Observer{
 		this.frame.setVisible(true);
 		this.frame.pack();
 		this.frame.setLocationRelativeTo(null);
+		this.frame.setMinimumSize(new Dimension(530,400));
 	}
 	
 	@Override
@@ -258,5 +329,57 @@ public class COView implements Observer{
 	        COColorsGenerator generator = (COColorsGenerator)cb.getSelectedItem();
 	        model.setColorsGenerator(generator);
 		}		
+	}
+	
+	
+	
+	private class NumberOfColorChooser implements MouseListener, ChangeListener {
+
+		COView view;
+		
+		public NumberOfColorChooser(COView view) {
+			this.view = view;
+		}
+		
+		@Override
+		public void stateChanged(ChangeEvent arg0) {
+			this.view.numbers.setText(slider.getValue() + "");
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			int number = slider.getValue();
+			List<Color> colors = new ArrayList<Color>();
+			int delta = 255 / (number+1);
+			int i = 0;
+			int gray = 0;
+			
+			while (i < number){
+				colors.add(new Color(gray, gray, gray));
+				gray += delta;
+				i++;
+			}
+			
+			//this.view.model = new COModel(new COStandardColorsGenerator(), colors);
+			this.view.model.setOriginalColors(colors);
+			
+			TableModel tableModel = new ChosenColorsModel(model, dualComponents, chosenColors);
+			COColorChooser table = new COColorChooser(tableModel);
+			
+			chosenColors.setViewportView(table);
+			
+		}
+		
+		@Override
+		public void mouseClicked(MouseEvent e) {}
+
+		@Override
+		public void mouseEntered(MouseEvent e) {}
+
+		@Override
+		public void mouseExited(MouseEvent e) {}
+
+		@Override
+		public void mousePressed(MouseEvent e) {}
 	}
 }

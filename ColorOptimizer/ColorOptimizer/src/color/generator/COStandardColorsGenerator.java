@@ -9,6 +9,8 @@ import java.util.List;
  */
 public class COStandardColorsGenerator extends COColorsGenerator {
 	
+	List<Color> colors;
+	
 	@Override
 	public List<Color> generateColors() {
 		List<Color> colors = new ArrayList<Color>();
@@ -26,6 +28,7 @@ public class COStandardColorsGenerator extends COColorsGenerator {
 			
 			colors.add(new Color(red, green, blue));
 		}
+
 		return colors;
 	}
 
@@ -33,5 +36,4 @@ public class COStandardColorsGenerator extends COColorsGenerator {
 	public String label() {
 		return "Standard colors";
 	}
-
 }

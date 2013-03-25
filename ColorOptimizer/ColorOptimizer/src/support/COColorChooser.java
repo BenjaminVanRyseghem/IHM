@@ -20,6 +20,11 @@ public class COColorChooser extends JPanel {
 		this.model = model;
 		this.setUp();
 	}
+
+	public void updateModel(TableModel model) {
+		this.model  = model;
+		this.setUp();
+	}
 	
 	protected void setUp(){		
 		

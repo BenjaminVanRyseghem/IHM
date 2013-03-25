@@ -3,6 +3,7 @@ import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 
@@ -36,6 +37,15 @@ public class COModel extends Observable {
 	 * 
 	 **********************************/
 	
+	public COModel(COColorsGenerator generator) {
+		super();
+		
+		this.setColorsGenerator(generator);
+		this.setOriginalColors(ComputeInitialColors());
+		
+		colorClipBoard = Default_Color;
+	}
+	
 	
 	public COModel(COColorsGenerator generator, List<Color> colors){
 		super();
@@ -56,6 +66,22 @@ public class COModel extends Observable {
 	 * PROTOCOL: computing
 	 * 
 	 **********************************/
+	
+	private List<Color> ComputeInitialColors() {
+		int number = 4;
+		
+		List<Color> colors = new ArrayList<Color>();
+		int delta = 255 / (number+1);
+		int i = 0;
+		int gray = 0;
+		
+		while (i < number){
+			colors.add(new Color(gray, gray, gray));
+			gray += delta;
+			i++;
+		}
+		return colors;
+	}
 	
 	
 	protected COColorsGenerator[] availableGenerators(){
@@ -219,5 +245,12 @@ public class COModel extends Observable {
 		StringSelection stringSelection = new StringSelection (export);
 		Clipboard clpbrd = Toolkit.getDefaultToolkit ().getSystemClipboard ();
 		clpbrd.setContents (stringSelection, null);
+	}
+	
+	public static void main(String[] args) {
+		
+		COModel model = new COModel(new COStandardColorsGenerator());
+		COView view = new COView(model);
+		view.show();
 	}
 }
