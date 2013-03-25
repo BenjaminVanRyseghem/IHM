@@ -248,7 +248,6 @@ public class COModel extends Observable {
 	}
 	
 	public static void main(String[] args) {
-		
 		COModel model = new COModel(new COStandardColorsGenerator());
 		COView view = new COView(model);
 		view.show();

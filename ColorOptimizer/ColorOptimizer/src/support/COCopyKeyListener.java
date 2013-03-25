@@ -1,5 +1,6 @@
 package support;
 
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -21,8 +22,8 @@ public class COCopyKeyListener implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent event) {
-			if(event.getModifiers() == 4 && event.getKeyChar() == 'c'){
-				this.model.copy();
-			}
+		if(event.getModifiers() == Toolkit.getDefaultToolkit().getMenuShortcutKeyMask() && event.getKeyChar() == 'c'){
+			this.model.copy();
+		}
 	}
 }

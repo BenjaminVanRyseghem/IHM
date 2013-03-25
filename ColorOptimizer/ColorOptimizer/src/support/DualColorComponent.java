@@ -51,6 +51,7 @@ public class DualColorComponent extends JComponent {
 	
 	protected void addPasteListener(){
 		this.addKeyListener(new COPasteKeyListener(this));
+		this.addMouseListener(new COPastePopupMenuListener(this));
 	}
 	
 	protected void paste(){

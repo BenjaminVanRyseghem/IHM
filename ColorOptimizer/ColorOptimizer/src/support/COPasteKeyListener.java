@@ -1,5 +1,6 @@
 package support;
 
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -21,8 +22,8 @@ public class COPasteKeyListener implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent event) {
-			if(event.getModifiers() == 4 && event.getKeyChar() == 'v'){
-				this.model.paste();
-			}
+		if(event.getModifiers() == Toolkit.getDefaultToolkit().getMenuShortcutKeyMask() && event.getKeyChar() == 'v'){
+			this.model.paste();
+		}
 	}
 }

@@ -9,7 +9,6 @@ import java.awt.dnd.DragSource;
 
 import javax.swing.JScrollPane;
 
-
 import core.COModel;
 
 public class DraggableDualComponent extends DualColorComponent implements DragGestureListener {
@@ -22,6 +21,7 @@ public class DraggableDualComponent extends DualColorComponent implements DragGe
 	    ds.createDefaultDragGestureRecognizer(this, DnDConstants.ACTION_COPY, this);
 	    	    
 	    this.addKeyListener(new COCopyKeyListener(this));
+	    this.addMouseListener(new COCopyPopupMenuListener(this));
 	}
 	
 	@Override
