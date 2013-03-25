@@ -360,14 +360,12 @@ public class COView implements Observer{
 				i++;
 			}
 			
-			//this.view.model = new COModel(new COStandardColorsGenerator(), colors);
 			this.view.model.setOriginalColors(colors);
 			
-			TableModel tableModel = new ChosenColorsModel(model, dualComponents, chosenColors);
+			TableModel tableModel = new ChosenColorsModel(this.view.model, dualComponents, chosenColors);
 			COColorChooser table = new COColorChooser(tableModel);
 			
 			chosenColors.setViewportView(table);
-			
 		}
 		
 		@Override
