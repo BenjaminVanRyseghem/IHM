@@ -4,8 +4,15 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import java.util.Observable;
 import java.util.Observer;
+
+import javax.swing.Timer;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JList;
@@ -27,13 +34,20 @@ public class PlayerView implements Observer {
 	
 	protected JList musicList;
 	
-	protected ListHandler listHandler;
-	
 	protected PlayerModel model;
+	
+	protected Timer timer;
 	
 	protected MusicListModel listModel;
 	
 	public PlayerView() {
+		timer = new Timer(200, new ActionListener(){
+
+			public void actionPerformed(ActionEvent arg0) {
+				PlayerView.this.model.setSearch(PlayerView.this.search.getText());
+			}
+			
+		});
 		this.model = new PlayerModel();
 		this.model.addObserver(this);
 		this.setUpFrame();
@@ -72,9 +86,32 @@ public class PlayerView implements Observer {
 		this.frame.add(this.progressBar, this.constraint(0, 0, 3, 1, GridBagConstraints.CENTER));
 	}
 	
+	protected void keyTyped(KeyEvent event){
+		timer.restart();
+	}
+	
 	public void setUpSearchField() {
 		this.search = new JTextField("", 10);
-		
+		this.search.addKeyListener(new KeyListener(){
+
+					@Override
+					public void keyPressed(KeyEvent arg0) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void keyReleased(KeyEvent arg0) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void keyTyped(KeyEvent arg0) {
+						PlayerView.this.keyTyped(arg0);
+					}
+			
+		});
 		this.frame.add(this.search, this.constraint(4, 0, 1, 1, GridBagConstraints.CENTER));
 	}
 	
@@ -97,7 +134,28 @@ public class PlayerView implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
+		MPUpdate update = (MPUpdate) arg;
+		update.applyTo(this);
+//		if(bool){
+//			this.listModel.removeAllElements();
+//			this.listModel.addElements(this.model.getMusics());
+//		
+//		}
+		
+		
+	}
+
+	public void update(MPOneUpdate mpOneUpdate) {
+		listModel.addElement(mpOneUpdate.getElement());
+		musicList.validate();
+	}
+
+	public void update(MPAllUpdate mpAllUpdate) {
 		this.listModel.removeAllElements();
 		this.listModel.addElements(this.model.getMusics());
+	}
+
+	public void update(MPUpdate mpUpdate) {
+		// Do not do anything
 	}
 }
