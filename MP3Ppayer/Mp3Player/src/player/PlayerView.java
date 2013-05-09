@@ -16,28 +16,21 @@ import javax.swing.JTextField;
 public class PlayerView implements Observer {
 	
 	protected JFrame frame;
-	
 	protected JButton play;
 	protected JButton rewind;
 	protected JButton fastForward;
-	
 	protected JSlider progressBar;
-	
 	protected JTextField search;
-	
 	protected JList musicList;
-	
 	protected ListHandler listHandler;
 	
 	protected PlayerModel model;
-	
 	protected MusicListModel listModel;
 	
 	public PlayerView() {
 		this.model = new PlayerModel();
 		this.model.addObserver(this);
 		this.setUpFrame();
-		
 	}
 	
 	public void setUpFrame() {
@@ -60,9 +53,9 @@ public class PlayerView implements Observer {
 		this.rewind = new JButton("rewind");
 		this.fastForward = new JButton("fast forward");
 		
-		this.frame.add(this.rewind,this.constraint(0, 1, 1, 1, GridBagConstraints.CENTER));
-		this.frame.add(this.play,this.constraint(1, 1, 1, 1, GridBagConstraints.CENTER));
-		this.frame.add(this.fastForward,this.constraint(2, 1, 1, 1, GridBagConstraints.CENTER));
+		this.frame.add(this.rewind,			this.constraint(0, 1, 1, 1, GridBagConstraints.CENTER));
+		this.frame.add(this.play,			this.constraint(1, 1, 1, 1, GridBagConstraints.CENTER));
+		this.frame.add(this.fastForward,	this.constraint(2, 1, 1, 1, GridBagConstraints.CENTER));
 	}
 	
 	public void setUpSlider() {

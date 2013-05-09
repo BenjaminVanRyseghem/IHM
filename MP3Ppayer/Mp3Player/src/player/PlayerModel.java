@@ -32,10 +32,12 @@ public class PlayerModel extends Observable{
 			ResultSet rs = statement.executeQuery("select * from songs");
 
 			//Vector<String[]> elements = new Vector<String[]>();
-			String[] element = new String[6];
+			
 			
 			while(rs.next())
 			{
+				String[] element = new String[6];
+				
 				element[0] = rs.getString("album");
 				element[1] = rs.getString("artist");
 				element[2] = rs.getString("title");
@@ -51,6 +53,7 @@ public class PlayerModel extends Observable{
 //						+ rs.getString("year") + " " + rs.getString("duration"));
 
 			}
+			
 			
 			this.notifyObservers(this.musics);
 		}
