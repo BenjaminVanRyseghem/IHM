@@ -30,6 +30,7 @@ Au centre les deux colonnes à gauche représentent les couleurs que l'utilisateur
 Pour choisir de nouvelles couleurs l'utilisateur n'aura qu'à prendre les couleurs depuis le panaché de couleurs proposées. Ce panaché est symbolisé par une liste qui se situe dans la colonne à droite de l'interface.
 
 En bas se trouve les différents boutons. Les deux boutons de gauche servent à modifier la colonne du centre. 
+
 Le bouton \emph{Compute} permet de calculer des couleurs ayant une nuance assez marquée. 
 Le bouton \emph{Reset} permet de vider cette colonne.
 
@@ -69,9 +70,42 @@ Sa sous classe \emph{DraggableDualComponent} permet de plus de pouvoir glisser l
 
 Cette interface répond bien au problème posé qui est d'aider l'utilisateur dans son choix de couleurs pour le passage en niveau de gris. L'interface permet de le faire sans effort (ou presque) et en un temps minimum grâce aux procédés mis en place.
 
-%\section{Appendices}
+
+\section{Annexe}
+
+\begin{figure}[ht]
+\begin{center}
+	\includegraphics[width=7cm]{images/core.png}
+\end{center}
+	\caption{UML du package core : le modèle et la vue}
+	\label{fig:core}
+\end{figure}
 
 
+\begin{figure}[ht]
+\begin{center}
+	\includegraphics[width=10cm]{images/color_generator.png}
+\end{center}
+	\caption{UML du package color.generator : les classes qui s'occupent de générer les nuances de gris avec leurs couleurs respective}
+	\label{fig:generator}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+	\includegraphics[width=10cm]{images/support.png}
+\end{center}
+	\caption{UML du package support : les classes qui permettent le cliquer/glisser et copier/coller des couleurs ainsi que la classe DualColorComponent (toutes les classes ne sont pas présentes justes les essentielles)}
+	\label{fig:}
+\end{figure}
+
+
+\begin{figure}[ht]
+\begin{center}
+	\includegraphics[width=10cm]{images/update.png}
+\end{center}
+	\caption{UML du package update : classes permettant la mise à jour des composants}
+	\label{fig:core}
+\end{figure}
 
 
 \end{document}

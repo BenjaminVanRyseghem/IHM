@@ -4,6 +4,12 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * I am a class that generate blue colors from dark to light
+ * 
+ * @author Benjamin Van Ryseghem, Francois Lepan
+ *
+ */
 public class COBlueGenerator extends COColorsGenerator {
 
 	@Override

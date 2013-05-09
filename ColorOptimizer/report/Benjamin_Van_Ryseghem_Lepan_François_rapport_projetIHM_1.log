@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  25 MAR 2013 17:14
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  25 MAR 2013 19:42
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -819,7 +819,11 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \paddingnota=\skip55
 \largeurnota=\skip56
 )
-(./Benjamin_Van_Ryseghem_Lepan_François_rapport_projetIHM_1.aux)
+(./Benjamin_Van_Ryseghem_Lepan_François_rapport_projetIHM_1.aux
+
+LaTeX Warning: Label `fig:core' multiply defined.
+
+)
 \openout1 = `Benjamin_Van_Ryseghem_Lepan_François_rapport_projetIHM_1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -836,8 +840,7 @@ LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 7.
 LaTeX Font Info:    Try loading font information for OT2+cmr on input line 7.
-
-(/usr/local/texlive/2010/texmf-dist/tex/latex/cyrillic/ot2cmr.fd
+ (/usr/local/texlive/2010/texmf-dist/tex/latex/cyrillic/ot2cmr.fd
 File: ot2cmr.fd 2001/08/11 v3.2c Computer Modern Cyrillic font definitions
 )
 LaTeX Font Info:    ... okay on input line 7.
@@ -953,7 +956,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 9.
 (/usr/local/texlive/2010/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-<images/interface.png, id=20, 531.9875pt x 401.5pt>
+<images/interface.png, id=24, 531.9875pt x 401.5pt>
 File: images/interface.png Graphic file (type png)
  <use images/interface.png>
 [1
@@ -963,25 +966,44 @@ File: images/interface.png Graphic file (type png)
 
 
 {/usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
-s/interface.png>] [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 77.
- [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 77.
+s/interface.png>] [2] <images/core.png, id=51, 303.1325pt x 387.4475pt>
+File: images/core.png Graphic file (type png)
+
+<use images/core.png>
+<images/color_generator.png, id=52, 536.0025pt x 434.62375pt>
+File: images/color_generator.png Graphic file (type png)
+
+<use images/color_generator.png>
+<images/support.png, id=53, 544.0325pt x 532.99126pt>
+File: images/support.png Graphic file (type png)
+ <use images/support.png>
+<images/update.png, id=54, 771.88374pt x 308.15125pt>
+File: images/update.png Graphic file (type png)
+ <use images/update.png>
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 111.
+
+[3 <./images/core.png (PNG copy)>] [4 <./images/color_generator.png (PNG copy)>
+] [5 <./images/support.png (PNG copy)> <./images/update.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 111.
 
 (./Benjamin_Van_Ryseghem_Lepan_François_rapport_projetIHM_1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 77.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 111.
 Package rerunfilecheck Info: File `Benjamin_Van_Ryseghem_Lepan_François_rappo
 rt_projetIHM_1.out' has not changed.
-(rerunfilecheck)             Checksum: 8BA8D7F653302D3199CD0A37FE9F063B;230.
+(rerunfilecheck)             Checksum: 31F2CE20AA0A5CE056EB0372EE4BAD62;271.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 10574 strings out of 493747
- 151789 string characters out of 3143546
- 239827 words of memory out of 3000000
- 13580 multiletter control sequences out of 15000+200000
+ 10605 strings out of 493747
+ 152312 string characters out of 3143546
+ 240332 words of memory out of 3000000
+ 13600 multiletter control sequences out of 15000+200000
  42129 words of font info for 100 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 39i,6n,39p,634b,362s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,6n,39p,634b,366s stack positions out of 5000i,500n,10000p,200000b,50000s
  </Users/benjamin/Library/texlive/2010/texmf-var/fonts/pk/ljfour/public/matha
 bx/matha10.600pk></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmbx12.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts
@@ -994,10 +1016,10 @@ mr17.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 fb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pf
 b>
 Output written on Benjamin_Van_Ryseghem_Lepan_François_rapport_projetIHM_1.pd
-f (3 pages, 128016 bytes).
+f (5 pages, 303665 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
- 12 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 118 PDF objects out of 1000 (max. 8388607)
+ 88 compressed objects within 1 object stream
+ 19 named destinations out of 1000 (max. 500000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

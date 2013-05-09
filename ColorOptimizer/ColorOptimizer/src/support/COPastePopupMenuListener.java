@@ -8,10 +8,29 @@ import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.SwingUtilities;
 
+
+/**
+ * I am a Listener for the element in the contextual menu.
+ * I paste the previously copied element on the selected element.
+ *  
+ * @author Benjamin Van Ryseghem, Francois Lepan
+ */
 public class COPastePopupMenuListener implements MouseListener {
 	
+	/**
+	 * The selected element.
+	 * 
+	 * @uml.property  name="component"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
 	DualColorComponent component;
 	
+	/**
+	 * The basic constructor.
+	 * Set the component value.
+	 * 
+	 * @param component the component value.
+	 */
 	public COPastePopupMenuListener(DualColorComponent dualColorComponent){
 		this.component = dualColorComponent;
 	}

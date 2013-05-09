@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="881,375" id="core" metadata="uml2-1.0" initialized="true" tag="10" key="32303037303533312D313020436F6C6F724F7074696D697A6572">
+  <children xsi:type="editmodel:ClassEditModel" name="COModel" location="50,50" size="146,265" id="core/COModel" runTimeClassModel="main([Ljava.lang.String;),setAvailableColors(Ljava.util.List;),COModel(Lcolor.generator.COColorsGenerator;I),colorClipBoard,getAvailableColors(),getOriginalColors(),copy(Ljava.awt.Color;),setOriginalColors(Ljava.util.List;),setChosenColor(ILjava.awt.Color;),paste(),exportChosenColors(),default_Color,chosenColors,notifyObservers(Ljava.lang.Object;),recomputeChosenColors()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="102,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="chosenColors" id="core/COModel#chosenColors"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="colorClipBoard" id="core/COModel#colorClipBoard"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="default_Color" id="core/COModel#default_Color"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="123,162">
+      <children xsi:type="editmodel:MethodEditModel" name="COModel" id="core/COModel#COModel(Lcolor.generator.COColorsGenerator;I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="copy" id="core/COModel#copy(Ljava.awt.Color;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="exportChosenColors" id="core/COModel#exportChosenColors()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAvailableColors" id="core/COModel#getAvailableColors()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getOriginalColors" id="core/COModel#getOriginalColors()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="notifyObservers" id="core/COModel#notifyObservers(Ljava.lang.Object;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="paste" id="core/COModel#paste()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="recomputeChosenColors" id="core/COModel#recomputeChosenColors()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setChosenColor" id="core/COModel#setChosenColor(ILjava.awt.Color;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="COView" location="246,50" size="83,175" id="core/COView" runTimeClassModel="update(Ljava.util.Observable;Ljava.lang.Object;),update(Lupdates.COGeneratorUpdate;),show(),COView(Lcore.COModel;),update(Lupdates.COAvailableColorsUpdate;),update(Lupdates.COClipBoardUpdate;),update(Lupdates.COChosenColorUpdate;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="57,126">
+      <children xsi:type="editmodel:MethodEditModel" name="COView" id="core/COView#COView(Lcore.COModel;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="show" id="core/COView#show()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="update" id="core/COView#update(Lupdates.COAvailableColorsUpdate;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="update" id="core/COView#update(Lupdates.COGeneratorUpdate;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="update" id="core/COView#update(Lupdates.COClipBoardUpdate;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="update" id="core/COView#update(Lupdates.COChosenColorUpdate;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="update" id="core/COView#update(Ljava.util.Observable;Ljava.lang.Object;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=1;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>

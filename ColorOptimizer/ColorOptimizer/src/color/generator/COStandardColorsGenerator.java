@@ -5,10 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * I am use to generate standard colors, aka colors from the full spectrum 
+ * I am use to generate standard colors, aka colors from the full spectrum.
+ * 
+ * @author Benjamin Van Ryseghem, Francois Lepan
  */
 public class COStandardColorsGenerator extends COColorsGenerator {
 	
+	/**
+	 * @uml.property  name="colors"
+	 */
 	List<Color> colors;
 	
 	@Override

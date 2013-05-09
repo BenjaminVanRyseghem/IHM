@@ -10,22 +10,38 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.table.TableModel;
 
+/**
+ * I am the Panel that contain the model of the color chooser.
+ * 
+ * @author Benjamin Van Ryseghem, Francois Lepan
+ *
+ */
 public class COColorChooser extends JPanel {
 
 	private static final long serialVersionUID = 6099857231974977024L;
 	
+	/**
+	 * The model associated to this Panel
+	 * 
+	 * @uml.property  name="model"
+	 * @uml.associationEnd  multiplicity="(1 1)"
+	 */
 	TableModel model;
 	
+	/**
+	 * The basic constructor.
+	 * 
+	 * @param model the TableModel associated to this panel
+	 */
 	public COColorChooser(TableModel model){
 		this.model = model;
 		this.setUp();
 	}
 
-	public void updateModel(TableModel model) {
-		this.model  = model;
-		this.setUp();
-	}
-	
+
+	/**
+	 * set up the placement of the component in this panel
+	 */
 	protected void setUp(){		
 		
 		int rows = model.getRowCount();
