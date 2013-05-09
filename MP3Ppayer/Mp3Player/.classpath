@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="/Users/WannaGetHigh/workspace/M1S2/IHM/MP3Ppayer/Mp3Player/jl1.0.1.modified.jar"/>
+	<classpathentry kind="lib" path="/Users/WannaGetHigh/workspace/M1S2/IHM/MP3Ppayer/Mp3Player/jid3lib-0.5.4.jar"/>
+	<classpathentry kind="lib" path="/Users/WannaGetHigh/workspace/M1S2/IHM/MP3Ppayer/Mp3Player/sqlite-jdbc-3.7.15-SNAPSHOT-2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
