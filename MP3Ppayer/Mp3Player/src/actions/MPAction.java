@@ -19,6 +19,13 @@ public abstract class MPAction {
 	protected MPAction next;
 	protected MPPlayerModel model;
 	
+	public MPAction(MPAction prev, MPPlayerModel m){
+		model = m;
+		this.previous = prev;
+		if(prev != null)
+			prev.next = this;
+	}
+	
 	/**
 	 * Redo the action
 	 * @return the new last action (most often this). Returns null if this action can not be re-done
@@ -61,13 +68,5 @@ public abstract class MPAction {
 	 */
 	public boolean canRedo(){
 		return next != null;
-	}
-	
-	public MPAction(MPAction prev, MPPlayerModel m){
-		model = m;
-		this.previous = prev;
-		if(prev != null)
-			prev.next = this;
-	}
-	
+	}	
 }

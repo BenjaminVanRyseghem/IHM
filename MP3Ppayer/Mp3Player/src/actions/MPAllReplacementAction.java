@@ -4,11 +4,25 @@ import java.util.List;
 
 import player.MPPlayerModel;
 
+/**
+ * Represent the action of replacing all of the music displayed in the list.
+ * 
+ * @author Benjamin Van Ryseghem, Francois Lepan
+ *
+ */
 public class MPAllReplacementAction extends MPAction {
 
 	List<String[]> newList;
 	List<String[]> oldList;
 	
+	/**
+	 * the constructor that saves the data representing the 
+	 * 
+	 * @param prev
+	 * @param model
+	 * @param newList
+	 * @param oldList
+	 */
 	public MPAllReplacementAction(MPAction prev, MPPlayerModel model, List<String[]> newList, List<String[]> oldList){
 		super(prev, model);
 		this.newList = newList;

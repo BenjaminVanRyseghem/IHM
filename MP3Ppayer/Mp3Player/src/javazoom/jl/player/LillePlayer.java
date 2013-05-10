@@ -361,11 +361,11 @@ public class LillePlayer
 			if (h==null)
 				return false;
 			
-			// sample buffer set when decoder constructed
-			SampleBuffer output = (SampleBuffer)decoder.decodeFrame(h, bitstream);
-			
 			synchronized (this)
 			{
+				// sample buffer set when decoder constructed
+				SampleBuffer output = (SampleBuffer)decoder.decodeFrame(h, bitstream);
+			
 				out = audio;
 				if (out!=null)
 				{					
@@ -378,6 +378,9 @@ public class LillePlayer
 		catch (Exception ex)
 		{
 			System.out.println("Decoding exception: ending...");
+			if (bitstream != null)
+				bitstream.closeFrame();
+			
 			return false;
 		}
 		/*catch (RuntimeException ex)
