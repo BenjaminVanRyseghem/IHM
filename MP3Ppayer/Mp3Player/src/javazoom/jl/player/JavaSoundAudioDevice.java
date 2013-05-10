@@ -87,6 +87,7 @@ public class JavaSoundAudioDevice extends AudioDeviceBase
 		}
 	}
 
+	@Override
 	protected void openImpl()
 		throws JavaLayerException
 	{
@@ -134,6 +135,7 @@ public class JavaSoundAudioDevice extends AudioDeviceBase
 		return (int)(time*(fmt.getSampleRate()*fmt.getChannels()*fmt.getSampleSizeInBits())/8000.0);
 	}
 
+	@Override
 	protected void closeImpl()
 	{
 		if (source!=null)
@@ -142,6 +144,7 @@ public class JavaSoundAudioDevice extends AudioDeviceBase
 		}
 	}
 
+	@Override
 	protected void writeImpl(short[] samples, int offs, int len)
 		throws JavaLayerException
 	{
@@ -175,6 +178,7 @@ public class JavaSoundAudioDevice extends AudioDeviceBase
 		return b;
 	}
 
+	@Override
 	protected void flushImpl()
 	{
 		if (source!=null)
@@ -183,6 +187,7 @@ public class JavaSoundAudioDevice extends AudioDeviceBase
 		}
 	}
 
+	@Override
 	public int getPosition()
 	{
 		int pos = 0;
