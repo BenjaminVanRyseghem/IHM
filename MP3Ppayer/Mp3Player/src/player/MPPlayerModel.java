@@ -12,8 +12,6 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Observable;
 
-import javax.swing.filechooser.FileFilter;
-
 import support.MPID3TagRetriever;
 import support.MPID3Tags;
 import support.MPMusicListener;
@@ -54,6 +52,9 @@ public class MPPlayerModel extends Observable{
 	 */
 	protected List<String> mp3 = new ArrayList<String>();
 	
+	/**
+	 * The music player
+	 */
 	protected MPPlayer player = new MPPlayer();
 	private String currentMP3 = "";
 	
@@ -67,7 +68,9 @@ public class MPPlayerModel extends Observable{
 		this.fillUpList();
 	}
 
-	
+	/**
+	 * Initialise the list of real mp3 files.
+	 */
 	private void initMp3List() {
 		File dir = new File(getClass().getClassLoader().getResource("./data").getPath());
 		
@@ -88,7 +91,9 @@ public class MPPlayerModel extends Observable{
 		player.Load(currentMP3);
 	}
 
-	
+	/**
+	 * Fill up the databse with some dummy value for debugging purpose.
+	 */
 	public void fillUpDebugList() {
 		database.add(new String[] {"aa", "aa", "aa"});
 		database.add(new String[] {"ab", "ab", "ab"});
@@ -101,6 +106,9 @@ public class MPPlayerModel extends Observable{
 		database.add(new String[] {"cc", "cc", "cc"});
 	}
 	
+	/**
+	 * Fill up the databse list with the real data from the SQL databse.
+	 */
 	public void fillUpList() {
 		
 		MPID3TagRetriever retriever = new MPID3TagRetriever();
@@ -171,10 +179,17 @@ public class MPPlayerModel extends Observable{
 		}
 	}
 
+	/**
+	 * Add a listener to the music player in order to get notifications
+	 * @param listener 
+	 */
 	protected void addPlayerListener(MPMusicListener listener){
 		player.addListener(listener);
 	}
 	
+	/**
+	 * Randomize the playlist
+	 */
 	public void randomize(){
 		List<String[]> newDatabase = new ArrayList<String[]>();
 		
@@ -203,6 +218,10 @@ public class MPPlayerModel extends Observable{
 		super.notifyObservers(arg);
 	}
 	
+	/**
+	 * Insert an element in the current playlist. Use during a search
+	 * @param element
+	 */
 	public void addInMusic(String[] element){
 		musics.add(element);
 		
@@ -214,6 +233,10 @@ public class MPPlayerModel extends Observable{
 		new MPPlayerView(new MPPlayerModel());
 	}
 
+	/**
+	 * Set the text used to search through the current playlist
+	 * @param text
+	 */
 	public void setSearch(String text) {
 		if(this.search.equals(text)) return;
 		if("".equals(text)) {
@@ -237,59 +260,99 @@ public class MPPlayerModel extends Observable{
 		return database;
 	}
 
+	/**
+	 * Trigger a redo action
+	 */
 	public void redo() {
 		MPAction action = this.actionManager.redo();
 		if(action == null) return;
 		this.notifyObservers(new MPActionUpdate(action));
 	}
 
-
+	/**
+	 * Trigger an undo action
+	 */
 	public void undo() {
 		MPAction action = this.actionManager.undo();
 		if(action == null) return;
 		this.notifyObservers(new MPActionUpdate(action));
 	}
 	
-
+	/**
+	 * Perform the redo action according to the action
+	 * @param allReplacementAction
+	 */
 	public void redoFrom(MPAllReplacementAction allReplacementAction) {
 		this.database = allReplacementAction.getNewList();
 		notifyObservers(new MPAllUpdate());
 	}
 
-
+	/**
+	 * Perform the undo action according to the action
+	 * @param allReplacementAction
+	 */
 	public void undoFrom(MPAllReplacementAction allReplacementAction) {
 		this.database = allReplacementAction.getOldList();
 		notifyObservers(new MPAllUpdate());
 	}
 	
+	/**
+	 * Return if the action manager can currently perform an undo
+	 * @return
+	 */
 	public boolean canUndo() {
 		return actionManager.canUndo();
 	}
 	
+	/**
+	 * Return if the action manager can currently perform a redo
+	 * @return
+	 */
 	public boolean canRedo() {
 		return actionManager.canRedo();
 	}
 
 
+	/**
+	 * Perform the undo action according to the action
+	 * @param action
+	 */
 	public void undoFrom(MPAction action) {
 		// Do nothing
 	}
 
 
+	/**
+	 * Perform the redo action according to the action
+	 * @param next
+	 */
 	public void redoFrom(MPAction next) {
 		//Do nothing
 	}
 	
+	/**
+	 * Perform the undo action according to the action
+	 * @param action
+	 */
 	public void undoFrom(MPMoveToAction action) {
 		this.moveFromTo(action.getTo(), action.getFrom(), false);
 	}
 
 
+	/**
+	 * Perform the redo action according to the action
+	 * @param action
+	 */
 	public void redoFrom(MPMoveToAction action) {
 		this.moveFromTo(action.getFrom(), action.getTo(), false);
 	}
 	
-	
+	/**
+	 * Move an item from an index to another
+	 * @param dragIndex the index of the item to move
+	 * @param dropIndex the index of the item destination
+	 * @param notify true if an action notification should be triggered
+	 */
 	public void moveFromTo(int dragIndex, int dropIndex, boolean notify) {
 		
 		if (dragIndex == dropIndex) return;

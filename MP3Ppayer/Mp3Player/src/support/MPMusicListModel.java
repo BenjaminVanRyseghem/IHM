@@ -7,6 +7,12 @@ import javax.swing.ListModel;
 import javax.swing.event.ListDataEvent;
 import javax.swing.event.ListDataListener;
 
+/**
+ * This class is a model for the list. 
+ * It shares it's internal list with the @MPPlayerModel for optimisation.
+ * @author Lepan François, Benjamin Van Ryseghem
+ *
+ */
 public class MPMusicListModel implements ListModel {
 	List<String[]> elements;
 	List<ListDataListener> listeners = new ArrayList<ListDataListener>();;

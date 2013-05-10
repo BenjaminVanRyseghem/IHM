@@ -4,6 +4,11 @@ import java.util.List;
 
 import player.MPPlayerModel;
 
+/**
+ * This class is the thread used to search element in the playlist items
+ * @author Lepan François, Benjamin Van Ryseghem
+ *
+ */
 public class MPSearchThread extends Thread {
 	String search;
 	MPPlayerModel model;

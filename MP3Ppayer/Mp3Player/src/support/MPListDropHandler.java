@@ -8,6 +8,11 @@ import javax.swing.TransferHandler;
 
 import player.MPPlayerModel;
 
+/**
+ * This class is used to handle correctly the drop mechanism of the @MPPlayerView list.
+ * @author Lepan François, Benjamin Van Ryseghem
+ *
+ */
 public class MPListDropHandler extends TransferHandler {
 
 	/**

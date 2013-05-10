@@ -47,6 +47,11 @@ import updates.MPOneUpdate;
 import updates.MPSwitchUpdate;
 import updates.MPUpdate;
 
+/**
+ * This class is the main view of @MPPlayerModel. It's composed one multiple swing components
+ * @author Lepan François, Benjamin Van Ryseghem
+ *
+ */
 public class MPPlayerView implements Observer, DragGestureListener, DragSourceListener, MPMusicListener {
 	
 	private boolean mustUpdateSlider = true;
@@ -89,7 +94,6 @@ public class MPPlayerView implements Observer, DragGestureListener, DragSourceLi
 		
 		this.model.addPlayerListener(this);
 	}
-	
 	
 	public void setUpFrame() {
 		this.frame = new JFrame("jTunes");
@@ -194,7 +198,16 @@ public class MPPlayerView implements Observer, DragGestureListener, DragSourceLi
 		timer.restart();
 	}
 	
-	public GridBagConstraints constraint(int gridX, int gridY, int gridWidth, int gridHeight, int anchor) {
+	/**
+	 * Create some constraints. This is a convenient method
+	 * @param gridX
+	 * @param gridY
+	 * @param gridWidth
+	 * @param gridHeight
+	 * @param anchor
+	 * @return
+	 */
+	private GridBagConstraints constraint(int gridX, int gridY, int gridWidth, int gridHeight, int anchor) {
 		return this.constraint(gridX, gridY, gridWidth, gridHeight, anchor, new Insets(0, 0, 0, 0));
 	}
 	
@@ -293,7 +306,6 @@ public class MPPlayerView implements Observer, DragGestureListener, DragSourceLi
 	private class NextActionListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			System.out.println("mes boules");
 			MPPlayerView.this.model.playNextSong();	
 		}
 	}
