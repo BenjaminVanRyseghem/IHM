@@ -2,6 +2,11 @@ package updates;
 
 import player.MPPlayerView;
 
+/**
+ * This update is triggered when two element have been switched
+ * @author Lepan François, Benjamin Van Ryseghem
+ *
+ */
 public class MPSwitchUpdate extends MPUpdate {
 	
 	private int dragIndex;

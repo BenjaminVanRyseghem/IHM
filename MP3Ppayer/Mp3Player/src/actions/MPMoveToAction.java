@@ -2,6 +2,10 @@ package actions;
 
 import player.MPPlayerModel;
 
+/**
+ * This class is the action representing the move of an item form one index to another
+ * @author Lepan François, Benjamin Van Ryseghem
+ */
 public class MPMoveToAction extends MPAction {
 
 	int from, to;

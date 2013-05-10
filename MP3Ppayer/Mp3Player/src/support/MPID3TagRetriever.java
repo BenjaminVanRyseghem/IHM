@@ -9,6 +9,13 @@ import org.farng.mp3.id3.AbstractID3v1;
 import org.farng.mp3.id3.AbstractID3v2;
 import org.farng.mp3.id3.AbstractID3v2Frame;
 
+/**
+ * This class is used to retrieve ID3 tag from a source file.
+ * My main method is retrieveTags.
+ * 
+ * @author Lepan François, Benjamin Van Ryseghem
+ *
+ */
 public class MPID3TagRetriever {
 
 	public MPID3Tags retrieveTags(String filename){

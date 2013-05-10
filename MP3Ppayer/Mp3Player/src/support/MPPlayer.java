@@ -6,7 +6,11 @@ import javazoom.jl.decoder.Equalizer;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.LillePlayer;
 
-
+/**
+ * This class is in charge of providing a façade for music playing.
+ * @author Lepan François, Benjamin Van Ryseghem
+ *
+ */
 public class MPPlayer {
 	
 	private LillePlayer player;
