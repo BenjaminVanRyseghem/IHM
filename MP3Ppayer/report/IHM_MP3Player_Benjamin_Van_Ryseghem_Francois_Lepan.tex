@@ -2,7 +2,7 @@
 \input{/Users/WannaGetHigh/workspace/latex/macros.tex}
 
 \title{IHM - TP: jTunes}
-\author{François \bsc{Lepan} Benjamin \bsc{Van Ryseghem}}
+\author{François \bsc{Lepan} - Benjamin \bsc{Van Ryseghem}}
 
 \begin{document}
 \maketitle
@@ -13,36 +13,34 @@ Ce rapport décrit la conception et l'utilisation d'un lecteur mp3. Nous verrons 
 
 \section{Le lecteur jTunes}
 
-
 \begin{figure}[ht]
 \begin{center}
-	\includegraphics[width=15cm]{}
+	\includegraphics[width=10cm]{figures/jTunes.png}
 \end{center}
-	\caption{}
+	\caption{Le lecteur mp3 jTunes}
 	\label{lecteur_mp3}
 \end{figure}
 
-Ce lecteur (\emph{c.f.} ~Fig.~\ref{fig:}) est composé d'un curseur permettant de savoir ou en est la music lors de la lecture et de changer la position de la lecture. À coté de ce curseur on retrouve des labels indiquant la durée de la music, le temps écoulé  ainsi que le nom de la chanson joué.
+On retrouve dans ce lecteur (\emph{c.f.} ~Fig.~\ref{lecteur_mp3}) plusieurs zones. La première (en rouge) est composée d'un curseur permettant de savoir où en est la music lors de la lecture et de changer la position de la lecture. À coté de ce curseur on retrouve des labels indiquant la durée écoulée, le temps restant ainsi que le nom de la chanson joué au dessus du curseur.
 
-En dessous on retrouve les boutons "play/pause", "next" et "previous" qui permettent de changer les musiques jouées et a coté de ceux-ci se trouve le curseur permettant de gérer le son.
+En dessous (orange) on retrouve les boutons "lecture/pause", "next", "précédent" et "aléatoire" qui permettent de changer les musiques jouées.
 
-À droite de ces éléments on retrouve la barre de recherche permettant comme son nom l'indique de rechercher des musiques dans la base de donnée. En dessous de cette barre de recherche on retrouve deux boutons, "undo" et "redo" permettant d'annuler ou refaire la dernière action.
+À droite (vert) on retrouve la bar de recherche, en dessous deux boutons "annuler" et "refaire" permettant d'annuler ou refaire la dernière action et à droite de ceux-ci se trouve le curseur permettant de gérer le son.
 
 En dessous de ces éléments on retrouve la liste de music, qui affiche les informations des titres présent dans la base de donnée.
 
 \section{Implémentation}
 
-Ce lecteur mp3 à été conçu sur la base d'un MVC. Sur l'UML (\emph{c.f.} ~Fig.~\ref{})
+Ce lecteur mp3 à été conçu sur la base d'un MVC. Nous avons généré l'UML au sein de la JavaDoc car nous pensons que ce sera plus facile pour comprendre les classes implémentées. 
 
-\begin{figure}[ht]
-\begin{center}
-	\includegraphics[width=15cm]{}
-\end{center}
-	\caption{}
-	\label{uml}
-\end{figure}
+Nous avons rajouter un "Undo/Redo" ainsi qu'un drag and drop pour la liste de music. Nous pensons que cela permettra à l'utilisateur une meilleur expérience avec le lecteur. En effet il peut changer l'ordre de lecture et si cela ne lui plait pas il pourra annuler le changement effectuer.
 
+Nous avons aussi un double dispatch sur les actions du "undo/redo".
 
 \section*{Conclusion}
+
+
+Ce Lecteur permet de lire des music visualiser une liste de lecture et éditer cette liste de lecture et permettre à l'utilisateur une bonne expérience.
+
 
 \end{document}
