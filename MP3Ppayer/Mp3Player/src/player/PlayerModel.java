@@ -11,12 +11,27 @@ import java.util.Observable;
 
 public class PlayerModel extends Observable{
 
-	List<String[]> musics = new ArrayList<String[]>();
-
+	protected List<String[]> musics = new ArrayList<String[]>();
+	protected List<String[]> database = new ArrayList<String[]>();
+	protected String search = "";
+	protected Thread thread;
+	
 	public PlayerModel() {
-		this.fillUpList();
+		this.fillUpDebugList();
 	}
 
+	public void fillUpDebugList() {
+		database.add(new String[] {"aa", "aa", "aa"});
+		database.add(new String[] {"ab", "ab", "ab"});
+		database.add(new String[] {"ac", "ac", "ac"});
+		database.add(new String[] {"ba", "ba", "ba"});
+		database.add(new String[] {"bb", "bb", "bb"});
+		database.add(new String[] {"bc", "bc", "bc"});
+		database.add(new String[] {"ca", "ca", "ca"});
+		database.add(new String[] {"cb", "cb", "cb"});
+		database.add(new String[] {"cc", "cc", "cc"});
+	}
+	
 	public void fillUpList() {
 		Connection connection = null;
 		try
@@ -24,20 +39,18 @@ public class PlayerModel extends Observable{
 			Class.forName("org.sqlite.JDBC");
 
 			// create a database connection
-			connection = DriverManager.getConnection("jdbc:sqlite:/Users/WannaGetHigh/workspace/M1S2/IHM/MP3Ppayer/Mp3Player/mp3database.sqlite");
+			connection = DriverManager.getConnection("jdbc:sqlite:./mp3database.sqlite");
 			Statement statement = connection.createStatement();
 			statement.setQueryTimeout(30);  // set timeout to 30 sec.
 
 			//int i = 1;
 			ResultSet rs = statement.executeQuery("select * from songs");
 
-			//Vector<String[]> elements = new Vector<String[]>();
-			
 			
 			while(rs.next())
 			{
 				String[] element = new String[6];
-				
+
 				element[0] = rs.getString("album");
 				element[1] = rs.getString("artist");
 				element[2] = rs.getString("title");
@@ -45,17 +58,10 @@ public class PlayerModel extends Observable{
 				element[4] = rs.getString("year");
 				element[5] = rs.getString("duration");
 				
-				this.musics.add(element);
-
-				// read the result set
-//				System.out.println(rs.getString("album") + " " + rs.getString("artist") + " " 
-//						+ rs.getString("title") + " " + rs.getString("genre") + " " 
-//						+ rs.getString("year") + " " + rs.getString("duration"));
+				this.database.add(element);
 
 			}
-			
-			
-			this.notifyObservers(this.musics);
+
 		}
 		catch(SQLException e)
 		{
@@ -64,7 +70,6 @@ public class PlayerModel extends Observable{
 			System.err.println(e.getMessage());
 
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		finally
@@ -76,7 +81,6 @@ public class PlayerModel extends Observable{
 			}
 			catch(SQLException e)
 			{
-				// connection close failed.
 				System.err.println(e);
 			}
 		}
@@ -84,6 +88,8 @@ public class PlayerModel extends Observable{
 
 	
 	public List<String[]> getMusics() {
+		if(search.isEmpty())
+			return database;
 		return musics;
 	}
 	
@@ -92,8 +98,34 @@ public class PlayerModel extends Observable{
 		super.notifyObservers(arg);
 	}
 	
+	protected void addInMusic(String[] element){
+		musics.add(element);
+		this.notifyObservers(new MPOneUpdate(element));
+	}
+	
 	
 	public static void main(String[] args) {
 		new PlayerView();
+	}
+
+	public void setSearch(String text) {
+		if(this.search.equals(text)) return;
+		if("".equals(text)) {
+			this.search = text;
+			this.notifyObservers(new MPAllUpdate());
+			return;
+		}
+		this.search = text;
+		
+		musics.clear();
+		this.notifyObservers(new MPAllUpdate());
+		
+		if(thread != null) thread.interrupt();
+		thread = new SearchThread(text, this);
+		thread.start();
+	}
+
+	public List<String[]> getDatabase() {
+		return database;
 	}
 }

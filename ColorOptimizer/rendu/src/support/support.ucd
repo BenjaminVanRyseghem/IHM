@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="886,1759" id="support" metadata="uml2-1.0" initialized="true" tag="10" key="32303037303533312D313020436F6C6F724F7074696D697A6572">
+  <children xsi:type="editmodel:ClassEditModel" name="AvailableColorsModel" location="225,390" size="154,157" id="support/AvailableColorsModel" runTimeClassModel="getColumnCount(),getValueAt(II),AvailableColorsModel(Lcore.COModel;Ljavax.swing.JScrollPane;),getRowCount(),getColumnClass(I),getColumnName(I)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="111,108">
+      <children xsi:type="editmodel:MethodEditModel" name="AvailableColorsModel" id="support/AvailableColorsModel#AvailableColorsModel(Lcore.COModel;Ljavax.swing.JScrollPane;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getColumnClass" id="support/AvailableColorsModel#getColumnClass(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getColumnCount" id="support/AvailableColorsModel#getColumnCount()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getColumnName" id="support/AvailableColorsModel#getColumnName(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getRowCount" id="support/AvailableColorsModel#getRowCount()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getValueAt" id="support/AvailableColorsModel#getValueAt(II)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ChosenColorsModel" location="410,390" size="145,157" id="support/ChosenColorsModel" runTimeClassModel="ChosenColorsModel(Lcore.COModel;Ljava.util.List;Ljavax.swing.JScrollPane;),getColumnCount(),getValueAt(II),getRowCount(),getColumnClass(I),getColumnName(I)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="105,108">
+      <children xsi:type="editmodel:MethodEditModel" name="ChosenColorsModel" id="support/ChosenColorsModel#ChosenColorsModel(Lcore.COModel;Ljava.util.List;Ljavax.swing.JScrollPane;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getColumnClass" id="support/ChosenColorsModel#getColumnClass(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getColumnCount" id="support/ChosenColorsModel#getColumnCount()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getColumnName" id="support/ChosenColorsModel#getColumnName(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getRowCount" id="support/ChosenColorsModel#getRowCount()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getValueAt" id="support/ChosenColorsModel#getValueAt(II)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="COColorChooser" location="658,806" size="128,67" id="support/COColorChooser" runTimeClassModel="COColorChooser(Ljavax.swing.table.TableModel;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="92,18">
+      <children xsi:type="editmodel:MethodEditModel" name="COColorChooser" id="support/COColorChooser#COColorChooser(Ljavax.swing.table.TableModel;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="COCopyKeyListener" location="436,617" size="144,121" id="support/COCopyKeyListener" runTimeClassModel="keyPressed(Ljava.awt.event.KeyEvent;),keyTyped(Ljava.awt.event.KeyEvent;),COCopyKeyListener(Lsupport.DualColorComponent;),keyReleased(Ljava.awt.event.KeyEvent;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="103,72">
+      <children xsi:type="editmodel:MethodEditModel" name="COCopyKeyListener" id="support/COCopyKeyListener#COCopyKeyListener(Lsupport.DualColorComponent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="keyPressed" id="support/COCopyKeyListener#keyPressed(Ljava.awt.event.KeyEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="keyReleased" id="support/COCopyKeyListener#keyReleased(Ljava.awt.event.KeyEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="keyTyped" id="support/COCopyKeyListener#keyTyped(Ljava.awt.event.KeyEvent;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="COCopyMenuActionListener" location="50,806" size="186,85" id="support/COCopyMenuActionListener" runTimeClassModel="COCopyMenuActionListener(Lsupport.DualColorComponent;),actionPerformed(Ljava.awt.event.ActionEvent;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="136,36">
+      <children xsi:type="editmodel:MethodEditModel" name="COCopyMenuActionListener" id="support/COCopyMenuActionListener#COCopyMenuActionListener(Lsupport.DualColorComponent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="actionPerformed" id="support/COCopyMenuActionListener#actionPerformed(Ljava.awt.event.ActionEvent;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="COCopyPopupMenuListener" location="631,443" size="186,157" id="support/COCopyPopupMenuListener" runTimeClassModel="mousePressed(Ljava.awt.event.MouseEvent;),mouseEntered(Ljava.awt.event.MouseEvent;),mouseClicked(Ljava.awt.event.MouseEvent;),mouseExited(Ljava.awt.event.MouseEvent;),mouseReleased(Ljava.awt.event.MouseEvent;),COCopyPopupMenuListener(Lsupport.DualColorComponent;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="135,108">
+      <children xsi:type="editmodel:MethodEditModel" name="COCopyPopupMenuListener" id="support/COCopyPopupMenuListener#COCopyPopupMenuListener(Lsupport.DualColorComponent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="mouseClicked" id="support/COCopyPopupMenuListener#mouseClicked(Ljava.awt.event.MouseEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="mouseEntered" id="support/COCopyPopupMenuListener#mouseEntered(Ljava.awt.event.MouseEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="mouseExited" id="support/COCopyPopupMenuListener#mouseExited(Ljava.awt.event.MouseEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="mousePressed" id="support/COCopyPopupMenuListener#mousePressed(Ljava.awt.event.MouseEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="mouseReleased" id="support/COCopyPopupMenuListener#mouseReleased(Ljava.awt.event.MouseEvent;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="COFocusListener" location="479,806" size="129,103" id="support/COFocusListener" runTimeClassModel="focusGained(Ljava.awt.event.FocusEvent;),COFocusListener(Lsupport.DualColorComponent;),focusLost(Ljava.awt.event.FocusEvent;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="92,54">
+      <children xsi:type="editmodel:MethodEditModel" name="COFocusListener" id="support/COFocusListener#COFocusListener(Lsupport.DualColorComponent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="focusGained" id="support/COFocusListener#focusGained(Ljava.awt.event.FocusEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="focusLost" id="support/COFocusListener#focusLost(Ljava.awt.event.FocusEvent;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="COMouseFocusListener" location="50,599" size="163,157" id="support/COMouseFocusListener" runTimeClassModel="COMouseFocusListener(Lsupport.DualColorComponent;),mouseEntered(Ljava.awt.event.MouseEvent;),mouseClicked(Ljava.awt.event.MouseEvent;),mousePressed(Ljava.awt.event.MouseEvent;),mouseExited(Ljava.awt.event.MouseEvent;),mouseReleased(Ljava.awt.event.MouseEvent;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="117,108">
+      <children xsi:type="editmodel:MethodEditModel" name="COMouseFocusListener" id="support/COMouseFocusListener#COMouseFocusListener(Lsupport.DualColorComponent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="mouseClicked" id="support/COMouseFocusListener#mouseClicked(Ljava.awt.event.MouseEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="mouseEntered" id="support/COMouseFocusListener#mouseEntered(Ljava.awt.event.MouseEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="mouseExited" id="support/COMouseFocusListener#mouseExited(Ljava.awt.event.MouseEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="mousePressed" id="support/COMouseFocusListener#mousePressed(Ljava.awt.event.MouseEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="mouseReleased" id="support/COMouseFocusListener#mouseReleased(Ljava.awt.event.MouseEvent;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="COPasteKeyListener" location="240,617" size="146,121" id="support/COPasteKeyListener" runTimeClassModel="keyPressed(Ljava.awt.event.KeyEvent;),keyTyped(Ljava.awt.event.KeyEvent;),COPasteKeyListener(Lsupport.DualColorComponent;),keyReleased(Ljava.awt.event.KeyEvent;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="104,72">
+      <children xsi:type="editmodel:MethodEditModel" name="COPasteKeyListener" id="support/COPasteKeyListener#COPasteKeyListener(Lsupport.DualColorComponent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="keyPressed" id="support/COPasteKeyListener#keyPressed(Ljava.awt.event.KeyEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="keyReleased" id="support/COPasteKeyListener#keyReleased(Ljava.awt.event.KeyEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="keyTyped" id="support/COPasteKeyListener#keyTyped(Ljava.awt.event.KeyEvent;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="COPasteMenuActionListener" location="630,617" size="188,85" id="support/COPasteMenuActionListener" runTimeClassModel="actionPerformed(Ljava.awt.event.ActionEvent;),COPasteMenuActionListener(Lsupport.DualColorComponent;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="136,36">
+      <children xsi:type="editmodel:MethodEditModel" name="COPasteMenuActionListener" id="support/COPasteMenuActionListener#COPasteMenuActionListener(Lsupport.DualColorComponent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="actionPerformed" id="support/COPasteMenuActionListener#actionPerformed(Ljava.awt.event.ActionEvent;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="COPastePopupMenuListener" location="641,180" size="187,157" id="support/COPastePopupMenuListener" runTimeClassModel="COPastePopupMenuListener(Lsupport.DualColorComponent;),mouseClicked(Ljava.awt.event.MouseEvent;),mousePressed(Ljava.awt.event.MouseEvent;),mouseEntered(Ljava.awt.event.MouseEvent;),mouseExited(Ljava.awt.event.MouseEvent;),mouseReleased(Ljava.awt.event.MouseEvent;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="136,108">
+      <children xsi:type="editmodel:MethodEditModel" name="COPastePopupMenuListener" id="support/COPastePopupMenuListener#COPastePopupMenuListener(Lsupport.DualColorComponent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="mouseClicked" id="support/COPastePopupMenuListener#mouseClicked(Ljava.awt.event.MouseEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="mouseEntered" id="support/COPastePopupMenuListener#mouseEntered(Ljava.awt.event.MouseEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="mouseExited" id="support/COPastePopupMenuListener#mouseExited(Ljava.awt.event.MouseEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="mousePressed" id="support/COPastePopupMenuListener#mousePressed(Ljava.awt.event.MouseEvent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="mouseReleased" id="support/COPastePopupMenuListener#mouseReleased(Ljava.awt.event.MouseEvent;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="DropTargetListener" location="286,806" size="143,85" id="support/DropTargetListener" runTimeClassModel="DropTargetListener(Ljavax.swing.JComponent;),drop(Ljava.awt.dnd.DropTargetDropEvent;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="102,36">
+      <children xsi:type="editmodel:MethodEditModel" name="DropTargetListener" id="support/DropTargetListener#DropTargetListener(Ljavax.swing.JComponent;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="drop" id="support/DropTargetListener#drop(Ljava.awt.dnd.DropTargetDropEvent;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="TransferableColor" location="50,390" size="140,139" id="support/TransferableColor" runTimeClassModel="color,TransferableColor(Ljava.awt.Color;),getTransferDataFlavors(),isDataFlavorSupported(Ljava.awt.datatransfer.DataFlavor;),getTransferData(Ljava.awt.datatransfer.DataFlavor;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="65,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="color" id="support/TransferableColor#color"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="117,72">
+      <children xsi:type="editmodel:MethodEditModel" name="TransferableColor" location="-2,64" id="support/TransferableColor#TransferableColor(Ljava.awt.Color;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTransferData" id="support/TransferableColor#getTransferData(Ljava.awt.datatransfer.DataFlavor;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTransferDataFlavors" id="support/TransferableColor#getTransferDataFlavors()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isDataFlavorSupported" id="support/TransferableColor#isDataFlavorSupported(Ljava.awt.datatransfer.DataFlavor;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="DraggableDualComponent" location="232,239" size="179,85" id="support/DraggableDualComponent" runTimeClassModel="dragGestureRecognized(Ljava.awt.dnd.DragGestureEvent;),DraggableDualComponent(Lcore.COModel;ILjava.awt.Color;Ljavax.swing.JScrollPane;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="130,36">
+      <children xsi:type="editmodel:MethodEditModel" name="DraggableDualComponent" id="support/DraggableDualComponent#DraggableDualComponent(Lcore.COModel;ILjava.awt.Color;Ljavax.swing.JScrollPane;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="dragGestureRecognized" id="support/DraggableDualComponent#dragGestureRecognized(Ljava.awt.dnd.DragGestureEvent;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="support/DualColorComponent&lt;-support/DraggableDualComponent" source="//@children.13" target="//@children.15/@sourceConnections.0" targetEnd="//@children.13/@sourceConnections.0/@children.1" sourceEnd="//@children.13/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="89,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.15/@sourceConnections.0" name="DualColorComponent" location="147,50" size="153,139" id="support/DualColorComponent" runTimeClassModel="DualColorComponent(Lcore.COModel;Ljava.awt.Color;),index,update(Ljava.awt.Color;),DualColorComponent(Lcore.COModel;ILjava.awt.Color;Ljavax.swing.JScrollPane;),setBackground(Ljava.awt.Color;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="57,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="index" id="support/DualColorComponent#index"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="111,72">
+      <children xsi:type="editmodel:MethodEditModel" name="DualColorComponent" id="support/DualColorComponent#DualColorComponent(Lcore.COModel;ILjava.awt.Color;Ljavax.swing.JScrollPane;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="DualColorComponent" id="support/DualColorComponent#DualColorComponent(Lcore.COModel;Ljava.awt.Color;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setBackground" id="support/DualColorComponent#setBackground(Ljava.awt.Color;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="update" id="support/DualColorComponent#update(Ljava.awt.Color;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ClipBoardComponent" location="50,239" size="152,121" id="support/ClipBoardComponent" runTimeClassModel="ClipBoardComponent(Lcore.COModel;),update(),setBackground(Ljava.awt.Color;),ClipBoardComponent(Lcore.COModel;Ljava.awt.Color;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="110,72">
+      <children xsi:type="editmodel:MethodEditModel" name="ClipBoardComponent" id="support/ClipBoardComponent#ClipBoardComponent(Lcore.COModel;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="ClipBoardComponent" id="support/ClipBoardComponent#ClipBoardComponent(Lcore.COModel;Ljava.awt.Color;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setBackground" id="support/ClipBoardComponent#setBackground(Ljava.awt.Color;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="update" id="support/ClipBoardComponent#update()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.13/@sourceConnections.0" autoLocated="true" id="support/DualColorComponent&lt;-support/ClipBoardComponent" source="//@children.15" target="//@children.14" targetEnd="//@children.15/@sourceConnections.0/@children.1" sourceEnd="//@children.15/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="76,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="76,139" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=1;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>
